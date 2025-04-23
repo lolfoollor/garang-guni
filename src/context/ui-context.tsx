@@ -26,11 +26,21 @@ export function UiContextProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const toggleNav = () => {
-    setIsNavOpen((prevNavState) => !prevNavState);
+    setIsNavOpen((prevNavState) => {
+      if (!prevNavState) {
+        setisUserPanelOpen(false);
+      }
+      return !prevNavState;
+    });
   };
 
   const toggleUserPanel = () => {
-    setisUserPanelOpen((prevUserPanelState) => !prevUserPanelState);
+    setisUserPanelOpen((prevUserPanelState) => {
+      if (!prevUserPanelState) {
+        setIsNavOpen(false);
+      }
+      return !prevUserPanelState;
+    });
   };
 
   const toggleTheme = () =>
