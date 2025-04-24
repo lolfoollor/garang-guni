@@ -2,7 +2,7 @@
 @reference "@/index.css";
 
 .navBar {
-  @apply fixed flex flex-col inset-0 z-15 bg-white w-3xs;
+  @apply fixed flex flex-col inset-0 z-15 bg-white w-3xs transition-transform duration-300;
 }
   
 .navBarOpen {
@@ -22,21 +22,21 @@
 }
 
 .navBarLink {
-  @apply flex gap-4 items-center py-3 pb-2 border-b border-gray-300 w-full px-5 hover:bg-primary-300 transition-colors;
+  @apply flex gap-4 items-center pt-3 pb-2 border-gray-300 w-full px-5 hover:bg-primary-300 transition-colors rounded-xl duration-200 ;
 }
 
 .navBarContents button {
-  @apply ml-auto cursor-pointer duration-200 px-4;
-}
-
-.navBarContents button:hover {
-  @apply opacity-70;
+  @apply ml-auto cursor-pointer duration-200 px-4 pb-4 hover:opacity-70;
 }
 
 p {
-  @apply items-center
+  @apply items-center 
 }
 
 .bgOverlay {
-    @apply absolute inset-0 bg-[#030615] opacity-60 z-10 w-full;
-  }
+  @apply fixed inset-0 bg-[#030615] opacity-60 z-10 w-full ;
+}
+
+.active {
+  @apply text-primary-600;
+}

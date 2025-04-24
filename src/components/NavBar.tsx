@@ -1,11 +1,8 @@
 import { NavLink } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import NavBarHeader from "./NavBarHeader";
-
-interface NavBarProps {
-  isNavBarOpen: boolean;
-  toggleNavBar: () => void;
-}
+import { useContext } from "react";
+import { UiContext } from "../context/ui-context";
 
 const NAV_LINKS = [
   { to: "/", icon: "fa-solid fa-house", label: "Home" },
@@ -15,7 +12,10 @@ const NAV_LINKS = [
   { to: "/contact", icon: "fa-solid fa-phone", label: "Contact" },
 ];
 
-function NavBar({ isNavBarOpen, toggleNavBar }: NavBarProps) {
+function NavBar() {
+  const { isNavOpen: isNavBarOpen, toggleNav: toggleNavBar } =
+    useContext(UiContext);
+
   return (
     <>
       <div
@@ -33,6 +33,7 @@ function NavBar({ isNavBarOpen, toggleNavBar }: NavBarProps) {
                 className={({ isActive }) =>
                   isActive ? styles.active : undefined
                 }
+                onClick={toggleNavBar}
               >
                 <div className={styles.navBarLink}>
                   <i className={navLink.icon} />
@@ -47,7 +48,9 @@ function NavBar({ isNavBarOpen, toggleNavBar }: NavBarProps) {
           </button>
         </div>
       </div>
-      <div className={styles.bgOverlay}></div>
+      {isNavBarOpen && (
+        <div className={styles.bgOverlay} onClick={toggleNavBar}></div>
+      )}
     </>
   );
 }
