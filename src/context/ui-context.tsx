@@ -3,8 +3,8 @@ import { createContext, ReactNode, useState } from "react";
 interface UiContextType {
   isNavOpen: boolean;
   toggleNav: () => void;
-  isUserPanelOpen: boolean;
-  toggleUserPanel: () => void;
+  isUserMenuOpen: boolean;
+  toggleUserMenu: () => void;
   theme: string;
   toggleTheme: () => void;
 }
@@ -12,8 +12,8 @@ interface UiContextType {
 const initialUiContextState = {
   isNavOpen: false,
   toggleNav: () => {},
-  isUserPanelOpen: false,
-  toggleUserPanel: () => {},
+  isUserMenuOpen: false,
+  toggleUserMenu: () => {},
   theme: "light",
   toggleTheme: () => {},
 };
@@ -22,24 +22,24 @@ export const UiContext = createContext<UiContextType>(initialUiContextState);
 
 export function UiContextProvider({ children }: { children: ReactNode }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isUserPanelOpen, setisUserPanelOpen] = useState(false);
+  const [isUserMenuOpen, setisUserMenuOpen] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const toggleNav = () => {
     setIsNavOpen((prevNavState) => {
       if (!prevNavState) {
-        setisUserPanelOpen(false);
+        setisUserMenuOpen(false);
       }
       return !prevNavState;
     });
   };
 
-  const toggleUserPanel = () => {
-    setisUserPanelOpen((prevUserPanelState) => {
-      if (!prevUserPanelState) {
+  const toggleUserMenu = () => {
+    setisUserMenuOpen((prevUserMenuState) => {
+      if (!prevUserMenuState) {
         setIsNavOpen(false);
       }
-      return !prevUserPanelState;
+      return !prevUserMenuState;
     });
   };
 
@@ -50,10 +50,10 @@ export function UiContextProvider({ children }: { children: ReactNode }) {
 
   const uiContext = {
     isNavOpen,
-    isUserPanelOpen,
+    isUserMenuOpen,
     theme,
     toggleNav,
-    toggleUserPanel,
+    toggleUserMenu,
     toggleTheme,
   };
 
