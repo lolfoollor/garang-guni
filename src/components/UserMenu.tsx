@@ -5,13 +5,13 @@ import { UserContext } from "../context/user-context.tsx";
 import { UiContext } from "../context/ui-context.tsx";
 
 const USER_MENU_ITEMS = [
-  { to: "/profile", icon: "fa-solid fa-address-card fa-lg", label: "Profile" },
+  { to: "/profile", icon: "fa-solid fa-address-card", label: "Profile" },
   {
     to: "/manage",
-    icon: "fa-regular fa-calendar-check fa-lg",
+    icon: "fa-regular fa-calendar-check ",
     label: "Manage Booking",
   },
-  { to: "/setting", icon: "fa-solid fa-gear fa-lg", label: "Setting" },
+  { to: "/setting", icon: "fa-solid fa-gear ", label: "Setting" },
 ];
 
 function UserMenu() {

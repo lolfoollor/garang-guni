@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { to: "/list", icon: "fa-solid fa-table-list", label: "List & Rate" },
   { to: "/schedule", icon: "fa-solid fa-calendar-days", label: "Schedule" },
   { to: "/book", icon: "fa-regular fa-calendar-check", label: "Book Now" },
-  { to: "/contact", icon: "fa-solid fa-phone", label: "Contact" },
+  { to: "/contact", icon: "fa-solid fa-phone", label: "Contact Us" },
 ];
 
 function NavBar() {
