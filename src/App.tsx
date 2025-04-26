@@ -13,7 +13,6 @@ import TermsAndPrivacy from "./pages/TermsAndPrivacy.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import NotImplemented from "./pages/NotImplemented.jsx";
 import NavBar from "./components/NavBar.tsx";
-import { useState } from "react";
 import { UiContextProvider } from "./context/ui-context.tsx";
 
 const ROOT_CHILDREN_ROUTES = [
@@ -32,18 +31,12 @@ const ROOT_CHILDREN_ROUTES = [
 ];
 
 function App() {
-  const [showModal, setShowModal] = useState<boolean>(true);
-
-  const toggleNavBar = () => {
-    setShowModal((prev) => !prev);
-  };
-
   return (
     <UserContextProvider>
       <UiContextProvider>
         <BrowserRouter>
           <div className="appContainer">
-            <NavBar isNavBarOpen={showModal} toggleNavBar={toggleNavBar} />
+            <NavBar />
             <div className="app">
               <Routes>
                 <Route path="/" element={<RootLayout />}>
