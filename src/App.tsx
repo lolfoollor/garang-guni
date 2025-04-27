@@ -14,19 +14,25 @@ import PageNotFound from "./pages/PageNotFound.jsx";
 import NotImplemented from "./pages/NotImplemented.jsx";
 import NavBar from "./components/NavBar.tsx";
 import { UiContextProvider } from "./context/ui-context.tsx";
+import { ROUTES } from "./constants/routes.ts";
 
 const ROOT_CHILDREN_ROUTES = [
-  { path: "auth", element: <Auth /> },
-  { path: "book", element: <BookNow /> },
-  { path: "contact", element: <Contact /> },
-  { path: "faq", element: <NotImplemented /> },
-  { path: "follow", element: <NotImplemented /> },
-  { path: "jobs", element: <NotImplemented /> },
-  { path: "profile", element: <NotImplemented /> },
-  { path: "setting", element: <NotImplemented /> },
-  { path: "list", element: <List /> },
-  { path: "schedule", element: <Schedule /> },
-  { path: "terms-and-privacy", element: <TermsAndPrivacy /> },
+  { path: ROUTES.AUTH, element: <Auth /> },
+  { path: ROUTES.BOOK, element: <BookNow /> },
+  { path: ROUTES.CONTACT, element: <Contact /> },
+  { path: ROUTES.COOKIES, element: <NotImplemented /> },
+  { path: ROUTES.DOCUMENTATION, element: <NotImplemented /> },
+  { path: ROUTES.DROP_OFF, element: <NotImplemented /> },
+  { path: ROUTES.FAQ, element: <NotImplemented /> },
+  { path: ROUTES.FOLLOW, element: <NotImplemented /> },
+  { path: ROUTES.HISTORY, element: <NotImplemented /> },
+  { path: ROUTES.JOBS, element: <NotImplemented /> },
+  { path: ROUTES.LIST, element: <List /> },
+  { path: ROUTES.PROFILE, element: <NotImplemented /> },
+  { path: ROUTES.SCHEDULE, element: <Schedule /> },
+  { path: ROUTES.SETTING, element: <NotImplemented /> },
+  { path: ROUTES.TERMS_AND_PRIVACY, element: <TermsAndPrivacy /> },
+  { path: ROUTES.TOS, element: <NotImplemented /> },
   { path: "*", element: <PageNotFound /> },
 ];
 
@@ -39,7 +45,7 @@ function App() {
             <NavBar />
             <div className="app">
               <Routes>
-                <Route path="/" element={<RootLayout />}>
+                <Route path={ROUTES.HOME} element={<RootLayout />}>
                   <Route index element={<Welcome />} />
                   {ROOT_CHILDREN_ROUTES.map(({ path, element }) => (
                     <Route key={path} path={path} element={element} />
