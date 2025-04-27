@@ -4,7 +4,7 @@
 .navBar {
   @apply fixed flex flex-col inset-0 z-15 bg-white w-3xs transition-transform duration-300;
 }
-  
+
 .navBarOpen {
   @apply translate-x-0;
 }
@@ -22,19 +22,19 @@
 }
 
 .navBarLink {
-  @apply flex gap-4 items-center pt-3 pb-2 border-gray-300 w-full px-5 hover:bg-primary-300 transition-colors rounded-xl duration-200 ;
+  @apply flex gap-4 items-center pt-3 pb-2 border-gray-300 w-full px-5 hover:bg-primary-300 transition-colors rounded-xl duration-200;
 }
 
 .navBarContents button {
   @apply ml-auto cursor-pointer duration-200 px-4 pb-4 hover:opacity-70;
 }
 
-p {
-  @apply items-center 
+.navBarLink p {
+  @apply items-center;
 }
 
 .bgOverlay {
-  @apply fixed inset-0 bg-[#030615] opacity-60 z-10 w-full ;
+  @apply fixed inset-0 bg-[#030615] opacity-60 z-10 w-full;
 }
 
 .active {
