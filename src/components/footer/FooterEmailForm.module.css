@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.formContainer {
+  @apply flex flex-col gap-2 mt-2;
+}
+
+.formInputButtonWrapper {
+  @apply flex flex-col gap-2 md:flex-row md:gap-4;
+}
+
+.formEmailInput {
+  @apply px-4 py-2 border rounded-lg w-full md:w-72 focus:outline-none focus:ring-2 focus:ring-green-400;
+}
+
+.formSubmitButton {
+  @apply px-6 py-2 rounded-lg bg-primary-700 text-white font-medium 
+    hover:bg-primary-600 active:bg-primary-800 transition cursor-pointer;
+}
+
+.formErrorMsg {
+  @apply text-red-500 font-bold text-xs px-1 self-end;
+}
+
+.formEmailInputError {
+  @apply border-red-500 focus:ring-red-500 focus:ring-1;
+}

@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.footerCopyrightContainer {
+  @apply flex flex-col justify-between items-center text-xs mt-4 pr-1 gap-1 xs:flex-row xs:gap-0;
+}
+
+.footerCopyright {
+  @apply font-semibold;
+}
+
+.footerLinkContainer {
+  @apply flex space-x-2 sm:space-x-4;
+}
+
+.footerLinkButton {
+  @apply text-gray-600 font-semibold hover:text-primary cursor-pointer
+      active:text-primary-700 text-left;
+}

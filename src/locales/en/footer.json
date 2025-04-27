@@ -1,0 +1,29 @@
+{
+  "copyright": "©2099 Garang Guni",
+  "terms_of_service": "Terms of Service",
+  "privacy_policy": "Privacy Policy",
+  "cookies": "Cookies",
+  "emailHeader": { 
+    "header": "Join our newsletter to",
+    "bold": "keep up to date with us!"
+  },
+  "categories": {
+    "home": "Home",
+    "services": "Services",
+    "about_us": "About Us"
+  },
+  "link_labels": {
+    "list_and_rates": "List & Rates",
+    "drop_off": "Drop Off",
+    "faq": "FAQ",
+    "manage_booking": "Manage Booking",
+    "history": "History",
+    "settings": "Settings",
+    "follow_us": "Follow Us",
+    "documentation": "Documentation",
+    "contact_us": "Contact Us",
+    "manage_account": "Manage My Account",
+    "news_and_media": "News & Media",
+    "careers": "Careers"
+  }
+}

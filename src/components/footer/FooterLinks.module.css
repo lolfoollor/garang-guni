@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.footerLinkContainer {
+  @apply grid grid-cols-3 gap-2 col-span-3;
+}
+
+.footerLinkCategoryContainer {
+  @apply flex flex-col gap-3;
+}
+
+.footerUl {
+  @apply space-y-1;
+}
+
+.footerCategory {
+  @apply font-semibold;
+}
+
+.footerLinkButton {
+  @apply hover:text-primary cursor-pointer active:text-primary-700 text-left;
+}
