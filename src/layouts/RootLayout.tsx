@@ -1,16 +1,17 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/footer/Footer";
+import styles from "./RootLayout.module.css";
 
 function RootLayout() {
   return (
-    <>
+    <main className={styles.mainContainer}>
       <Header />
-      <div style={{ marginTop: "150px"}}>
+      <div className={styles.outletContainer}>
         <Outlet />
       </div>
       <Footer />
-    </>
+    </main>
   );
 }
 
