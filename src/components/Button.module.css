@@ -1,24 +1,7 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
 .button {
-  border-radius: 8px;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  background-color: transparent;
-  border: 0;
-  transition: border-color 0.25s;
-}
-
-.button:hover {
-  color:blue;
-  border: 0;
-}
-
-.button:active {
-  color: red;
-}
-
-.button:focus {
-  outline: none;
+  @apply bg-primary-700 cursor-pointer justify-center items-center 
+    px-2.5 py-5 rounded-md font-medium transition-colors duration-200;
 }
