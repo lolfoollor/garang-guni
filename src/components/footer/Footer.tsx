@@ -7,7 +7,6 @@ import ContentWrapper from "../ContentWrapper";
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.footerBg}></div>
       <ContentWrapper>
         <FooterEmail />
         <FooterLogoAndLinks />

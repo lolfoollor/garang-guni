@@ -3,9 +3,5 @@
 
 .footer {
   @apply flex min-h-12 h-fit w-full border-primary-600 
-    border-t-4 justify-center px-4 py-4;
-}
-
-.footerBg {
-  @apply bg-white;
+    border-t-4 justify-center px-4 py-4 bg-white;
 }
