@@ -2,8 +2,8 @@ import { useState } from "react";
 
 import { Backdrop, CircularProgress } from "@mui/material";
 import styles from "./Auth.module.css";
-import LoginForm from "../../features/auth/login/LoginForm";
-import RegisterForm from "../../features/auth/register/RegisterForm";
+import LoginForm from "../../features/auth/login/LoginForm.jsx";
+import RegisterForm from "../../features/auth/register/RegisterForm.jsx";
 
 export default function Auth() {
   const [isLoading, setIsLoading] = useState(false);

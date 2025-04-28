@@ -26,7 +26,7 @@ import curtainLogo from "../assets/list/curtain.svg";
 import nonRecyclableLogo from "../assets/list/nonRecyclable.svg";
 import styles from "./List.module.css";
 import ListTable from "../features/rates/ListTable.jsx";
-import backEnd from "../api/back-end-api";
+import backEnd from "../api/back-end-api.js";
 
 const DATAS = {
   OLD_ELECTRONIC_DEVICE: [

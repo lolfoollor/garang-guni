@@ -1,19 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import RootLayout from "./layouts/RootLayout.tsx";
-import Welcome from "./pages/Welcome.jsx";
-import Contact from "./pages/Contact.jsx";
-import Auth from "./pages/auth/Auth.jsx";
-import BookNow from "./pages/BookNow.jsx";
-import List from "./pages/List.jsx";
-import Schedule from "./pages/Schedule.jsx";
+import RootLayout from "./layouts/RootLayout";
+import Welcome from "./pages/Welcome";
+import Contact from "./pages/Contact";
+import Auth from "./pages/auth/Auth";
+import BookNow from "./pages/BookNow";
+import List from "./pages/List";
+import Schedule from "./pages/Schedule";
 
-import { UserContextProvider } from "./context/user-context.js";
-import TermsAndPrivacy from "./pages/TermsAndPrivacy.jsx";
-import PageNotFound from "./pages/PageNotFound.jsx";
-import NotImplemented from "./pages/NotImplemented.jsx";
-import NavBar from "./components/NavBar.tsx";
-import { UiContextProvider } from "./context/ui-context.tsx";
+import { UserContextProvider } from "./context/user-context";
+import TermsAndPrivacy from "./pages/TermsAndPrivacy";
+import PageNotFound from "./pages/PageNotFound";
+import NotImplemented from "./pages/NotImplemented";
+import NavBar from "./components/NavBar";
+import { UiContextProvider } from "./context/ui-context";
 import { ROUTES } from "./constants/routes.ts";
 
 const ROOT_CHILDREN_ROUTES = [

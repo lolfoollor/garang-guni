@@ -4,7 +4,7 @@ import contactUsBanner from "../assets/contactUsBanner.png";
 import darkContactUsBanner from "../assets/darkContactUsBanner.png";
 import ContactInfoBox from "../features/contacts/ContactInfoBox.jsx";
 import styles from "./Contact.module.css";
-import ModalDialog from "../components/ModalDialog";
+import ModalDialog from "../components/ModalDialog.jsx";
 import ContactForm from "../features/contacts/ContactForm.jsx";
 
 const CONTACT_DETAILS = ["📞 Phone: 87414896", "📧 Email: test@test.com"];

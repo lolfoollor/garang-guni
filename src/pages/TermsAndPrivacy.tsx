@@ -1,4 +1,4 @@
-import styles from "./TermsAndPrivacy.module.css"
+import styles from "./TermsAndPrivacy.module.css";
 import TermsAndConditionsContent from "../components/TermsAndConditionsContent";
 
 function TermsAndPrivacy() {
