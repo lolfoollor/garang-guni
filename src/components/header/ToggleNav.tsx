@@ -5,7 +5,7 @@ const ToggleNav = () => {
   const { toggleNav } = useContext(UiContext);
 
   return (
-    <div onClick={toggleNav}>
+    <div className="cursor-pointer" onClick={toggleNav}>
       <i className="fa-solid fa-bars fa-xl"></i>
     </div>
   );

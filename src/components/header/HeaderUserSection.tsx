@@ -7,7 +7,7 @@ import { UserContext } from "../../context/user-context";
 
 const HeaderUserSection = () => {
   const { isLoggedIn, credentials } = useContext(UserContext);
-  const { toggleUserMenu } = useContext(UiContext);
+  const { isUserMenuOpen, toggleUserMenu } = useContext(UiContext);
   const navigate = useNavigate();
 
   const handleUserIconClick = () => {
@@ -35,7 +35,7 @@ const HeaderUserSection = () => {
         <div className={styles.usernameIcon} onClick={handleUserIconClick}>
           <i className="fa-solid fa-user fa-xl"></i>
         </div>
-        <UserMenu />
+        {isUserMenuOpen && <UserMenu />}
       </div>
     </>
   );
