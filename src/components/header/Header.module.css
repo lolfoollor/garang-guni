@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.header {
+  @apply flex w-full bg-lightGreen px-6 py-3 justify-center sticky top-0 z-5;
+}
+
+.headerContent {
+  @apply flex justify-between;
+}
+
+.headerContainer {
+  @apply flex gap-4 items-center;
+}

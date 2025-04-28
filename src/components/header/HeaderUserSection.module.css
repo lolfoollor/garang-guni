@@ -1,18 +1,6 @@
 @import "tailwindcss";
 @reference "@/index.css";
 
-.header {
-  @apply flex w-full bg-lightGreen px-6 py-3 justify-center sticky top-0 z-5;
-}
-
-.headerContent {
-  @apply max-w-7xl justify-between flex grow;
-}
-
-.headerContainer {
-  @apply flex gap-4 items-center;
-}
-
 .username {
   @apply h-full w-fit size-1.5 hidden text-gray-800 whitespace-nowrap 
       items-center xs:flex xs:text-sm sm:text-2xl;

@@ -9,7 +9,3 @@
 .footerBg {
   @apply bg-white;
 }
-
-.footerContent {
-  @apply flex flex-col max-w-7xl grow;
-}

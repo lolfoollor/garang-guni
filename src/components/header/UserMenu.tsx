@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./UserMenu.module.css";
-import { UserContext } from "../context/user-context.tsx";
-import { UiContext } from "../context/ui-context.tsx";
+import { UserContext } from "../../context/user-context.tsx";
+import { UiContext } from "../../context/ui-context.tsx";
 
 const USER_MENU_ITEMS = [
   { to: "/profile", icon: "fa-solid fa-address-card", label: "Profile" },
