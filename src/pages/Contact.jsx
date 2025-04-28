@@ -2,14 +2,18 @@ import { useState } from "react";
 
 import contactUsBanner from "../assets/contactUsBanner.png";
 import darkContactUsBanner from "../assets/darkContactUsBanner.png";
-import ContactInfoBox from "../components/ContactInfoBox";
+import ContactInfoBox from "../features/contacts/ContactInfoBox.jsx";
 import styles from "./Contact.module.css";
 import ModalDialog from "../components/ModalDialog";
-import ContactForm from "../components/ContactForm";
+import ContactForm from "../features/contacts/ContactForm.jsx";
 
 const CONTACT_DETAILS = ["📞 Phone: 87414896", "📧 Email: test@test.com"];
 const OPERATING_HOURS = ["Mon-Fri (9am-6pm)", "Saturday (9am-12pm)"];
-const ADDRESS = ["99 Marshmallow Street", "#00-00 Spaghetti Tower", "Singapore ---101 🔥"];
+const ADDRESS = [
+  "99 Marshmallow Street",
+  "#00-00 Spaghetti Tower",
+  "Singapore ---101 🔥",
+];
 
 function Contact() {
   const [isShowingForm, setIsShowingForm] = useState(false);
@@ -35,13 +39,18 @@ function Contact() {
           <h2>Meet Us</h2>
           <div className={styles.meetUsContainer}>
             <ContactInfoBox title="Contact Info" infoList={CONTACT_DETAILS} />
-            <ContactInfoBox title="Operating Hours" infoList={OPERATING_HOURS} />
+            <ContactInfoBox
+              title="Operating Hours"
+              infoList={OPERATING_HOURS}
+            />
             <ContactInfoBox title="Address" infoList={ADDRESS} />
           </div>
         </div>
         <div className={styles.inquiryBox}>
           <h2>Talk to Us!</h2>
-          <div style={{ padding: "10px 0px" }}>Have a burning question? We would love to hear from you!</div>
+          <div style={{ padding: "10px 0px" }}>
+            Have a burning question? We would love to hear from you!
+          </div>
           <button className={styles.inquryButton} onClick={toggleInquiryForm}>
             Contact us
           </button>

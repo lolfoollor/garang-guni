@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import ScheduleMap from "../components/ScheduleMap";
+import ScheduleMap from "../features/locations/ScheduleMap.jsx";
 import styles from "./Schedule.module.css";
 
 function Schedule() {
@@ -28,13 +28,26 @@ function Schedule() {
       return;
     }
 
-    if ((firstTwoDigits >= 72 && firstTwoDigits <= 76) || firstTwoDigits == 58 || firstTwoDigits == 59) {
+    if (
+      (firstTwoDigits >= 72 && firstTwoDigits <= 76) ||
+      firstTwoDigits == 58 ||
+      firstTwoDigits == 59
+    ) {
       setZone("North West");
-    } else if ((firstTwoDigits >= 51 && firstTwoDigits <= 55) || firstTwoDigits == 82) {
+    } else if (
+      (firstTwoDigits >= 51 && firstTwoDigits <= 55) ||
+      firstTwoDigits == 82
+    ) {
       setZone("North East");
-    } else if ((firstTwoDigits >= 60 && firstTwoDigits <= 71) || (firstTwoDigits >= 14 && firstTwoDigits <= 16)) {
+    } else if (
+      (firstTwoDigits >= 60 && firstTwoDigits <= 71) ||
+      (firstTwoDigits >= 14 && firstTwoDigits <= 16)
+    ) {
       setZone("South West");
-    } else if ((firstTwoDigits >= 31 && firstTwoDigits <= 50) || firstTwoDigits == 81) {
+    } else if (
+      (firstTwoDigits >= 31 && firstTwoDigits <= 50) ||
+      firstTwoDigits == 81
+    ) {
       setZone("North East");
     } else {
       setZone("Central");
@@ -66,7 +79,11 @@ function Schedule() {
           onChange={handlePostalCodeChange}
           className={styles.inputBox}
         />
-        <button type="button" onClick={zoneSearchHandler} className={styles.button}>
+        <button
+          type="button"
+          onClick={zoneSearchHandler}
+          className={styles.button}
+        >
           CHECK
         </button>
         <button type="button" onClick={resetHandler} className={styles.button}>
@@ -76,8 +93,23 @@ function Schedule() {
       {showMessage && (
         <p>
           Postal code{" "}
-          <span className={zone === "Invalid Postal Code" ? styles.invalidZone : styles.postalCode}>{postalCode}</span>{" "}
-          zoning is :<span className={zone === "Invalid Postal Code" ? styles.invalidZone : styles.zone}>{zone}</span>
+          <span
+            className={
+              zone === "Invalid Postal Code"
+                ? styles.invalidZone
+                : styles.postalCode
+            }
+          >
+            {postalCode}
+          </span>{" "}
+          zoning is :
+          <span
+            className={
+              zone === "Invalid Postal Code" ? styles.invalidZone : styles.zone
+            }
+          >
+            {zone}
+          </span>
         </p>
       )}
       <br />

@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FormControl, Select, MenuItem } from "@mui/material";
-
 
 import styles from "./BookNow.module.css";
 import backEnd from "../api/back-end-api";
 import recyclingCircle from "../assets/recycleCircle.png";
 import ModalDialog from "../components/ModalDialog";
-import BookNowForm from "../components/BookNowForm";
+import BookNowForm from "../features/bookings/BookNowForm";
 
-const HAIKU = ["Time for new chapters", "Treasure await new HANDS", "Book your slot today"];
+const HAIKU = [
+  "Time for new chapters",
+  "Treasure await new HANDS",
+  "Book your slot today",
+];
 
 const splitLastWord = (str) => {
   const wordArr = str.split(" ");
@@ -29,15 +32,15 @@ const isValidSession = (token) => {
 
 const convertDateToUnixStr = (dateObj) => {
   if (dateObj === null) return null;
-  return (dateObj.getTime()/1000).toString();
-}
+  return (dateObj.getTime() / 1000).toString();
+};
 
 const formatVariableToReadableText = (variableName) => {
   const nameArr = variableName.split(/(?=[A-Z])/);
   const firstName = nameArr[0];
   nameArr[0] = firstName[0].toUpperCase() + firstName.slice(1);
-  return nameArr.join(' ');
-}
+  return nameArr.join(" ");
+};
 
 function BookNow() {
   const [datesWithLocation, setDatesWithLocation] = useState({});
@@ -57,7 +60,9 @@ function BookNow() {
     try {
       console.log("🔎Starting getDatesAndLocations");
       if (!isValidSession(sessionToken)) {
-        console.error(`🚨 Error: Forbidden (403): Please log In with correct credientials!`);
+        console.error(
+          `🚨 Error: Forbidden (403): Please log In with correct credientials!`,
+        );
         return;
       }
       const response = await backEnd.get("/dateAndLocations");
@@ -71,7 +76,9 @@ function BookNow() {
       );
       console.log("✅ Converted Dates Successfully");
     } catch (error) {
-      console.error(`🚨 Error: ${error.code}(${error.response.status}): ${error.message}`);
+      console.error(
+        `🚨 Error: ${error.code}(${error.response.status}): ${error.message}`,
+      );
     } finally {
       console.log("✅ getDatesAndLocations ran successfully!");
     }
@@ -81,29 +88,37 @@ function BookNow() {
     try {
       console.log("🔎Starting getItem");
       if (!isValidSession(sessionToken)) {
-        console.error(`🚨 Error: Forbidden (403): Please log In with correct credientials!`);
+        console.error(
+          `🚨 Error: Forbidden (403): Please log In with correct credientials!`,
+        );
         return;
       }
       const response = await backEnd.get("/Karang-guni");
       console.log("✅ getItems Data retrieved");
       console.log("⏳ Converting to list of available items");
       const itemsArr = [];
-      response.data.forEach((person) => 
-        Object.entries(person.items).forEach((item) => itemsArr.push(item[0]))
+      response.data.forEach((person) =>
+        Object.entries(person.items).forEach((item) => itemsArr.push(item[0])),
       );
-      const uniqueItems = Array.from(new Set(itemsArr))
-      const formattedItems = uniqueItems.map((item) => formatVariableToReadableText(item));
+      const uniqueItems = Array.from(new Set(itemsArr));
+      const formattedItems = uniqueItems.map((item) =>
+        formatVariableToReadableText(item),
+      );
       setListOfItems(formattedItems);
       console.log("✅ Converted items Successfully");
     } catch (error) {
-      console.error(`🚨 Error: ${error.code}(${error.response.status}): ${error.message}`);
+      console.error(
+        `🚨 Error: ${error.code}(${error.response.status}): ${error.message}`,
+      );
     } finally {
       console.log("✅ getDatesAndLocations ran successfully!");
     }
   };
 
   const isSelectable = (date) => {
-    return listOfAvailDates.some((availableDate) => availableDate.getTime() === date.getTime());
+    return listOfAvailDates.some(
+      (availableDate) => availableDate.getTime() === date.getTime(),
+    );
   };
 
   const handleDateChange = (date) => {
@@ -125,7 +140,9 @@ function BookNow() {
       <div className={styles.landingPageBg}>
         <div className={styles.textBoxContainer}>
           <div>
-            <p className={`${styles.textFont} ${styles.haikuHeader}`}>Turn your trash into cash</p>
+            <p className={`${styles.textFont} ${styles.haikuHeader}`}>
+              Turn your trash into cash
+            </p>
             <div className={`${styles.textFont} ${styles.haiku}`}>
               {HAIKU.map((text, i) => {
                 if (i === 1) {
@@ -141,10 +158,14 @@ function BookNow() {
               })}
             </div>
             <p className={styles.haikuFooter}>
-              Find the list of eligible items for trade <Link to='/list'>here!</Link>
+              Find the list of eligible items for trade{" "}
+              <Link to="/list">here!</Link>
             </p>
           </div>
-          <div className={styles.bookNowContainer} style={{ display: "flex", alignItems: "center" }}>
+          <div
+            className={styles.bookNowContainer}
+            style={{ display: "flex", alignItems: "center" }}
+          >
             <div className={styles.chooseLocation}>
               <p>Location</p>
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
@@ -157,15 +178,16 @@ function BookNow() {
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
-                  {convertDateToUnixStr(selectedDate) && 
-                    datesWithLocation[convertDateToUnixStr(selectedDate)]
-                      .locations.map((location, i) => {
-                    return (
-                      <MenuItem key={i} value={location.name}>
-                        {location.name}
-                      </MenuItem>
-                    );
-                  })}
+                  {convertDateToUnixStr(selectedDate) &&
+                    datesWithLocation[
+                      convertDateToUnixStr(selectedDate)
+                    ].locations.map((location, i) => {
+                      return (
+                        <MenuItem key={i} value={location.name}>
+                          {location.name}
+                        </MenuItem>
+                      );
+                    })}
                 </Select>
               </FormControl>
             </div>
@@ -185,24 +207,31 @@ function BookNow() {
                 wrapperClassName={styles.datePickerWrapper}
               />
             </div>
-            <button className={styles.bookNowButton} onClick={handleToggleModal}>Book Now</button>
+            <button
+              className={styles.bookNowButton}
+              onClick={handleToggleModal}
+            >
+              Book Now
+            </button>
           </div>
         </div>
         <div className={styles.recyclingCircle}>
           <img src={recyclingCircle} alt="circle" />
         </div>
         <ModalDialog isOpen={isModalOpen} handleClose={handleToggleModal}>
-          <BookNowForm handleClose={handleToggleModal} 
-                       handleDateChange={handleDateChange}
-                       isSelectable={isSelectable}
-                       handleLocationChange={handleLocationChange}
-                       convertDateToUnixStr={convertDateToUnixStr}
-                       isDark={false} 
-                       selectedDate={selectedDate} 
-                       listOfAvailDates={listOfAvailDates}
-                       datesWithLocation={datesWithLocation}
-                       selectedLocation={selectedLocation} 
-                       listOfItems={listOfItems}/>
+          <BookNowForm
+            handleClose={handleToggleModal}
+            handleDateChange={handleDateChange}
+            isSelectable={isSelectable}
+            handleLocationChange={handleLocationChange}
+            convertDateToUnixStr={convertDateToUnixStr}
+            isDark={false}
+            selectedDate={selectedDate}
+            listOfAvailDates={listOfAvailDates}
+            datesWithLocation={datesWithLocation}
+            selectedLocation={selectedLocation}
+            listOfItems={listOfItems}
+          />
         </ModalDialog>
       </div>
     </>

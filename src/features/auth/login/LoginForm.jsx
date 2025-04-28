@@ -1,11 +1,11 @@
 // Ref: https://codesandbox.io/p/sandbox/colors-magic-gtyod?file=%2Fsrc%2Fcomponents%2FLogin.jsx
 // Ref: https://www.geeksforgeeks.org/forgot-reset-password-feature-with-react-and-node-js/
 
-import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { Button as BaseButton, buttonClasses } from '@mui/base/Button';
-import { styled } from '@mui/system';
+import { Button as BaseButton, buttonClasses } from "@mui/base/Button";
+import { styled } from "@mui/system";
 import {
   Avatar,
   FilledInput,
@@ -16,20 +16,20 @@ import {
   InputLabel,
   TextField,
   Typography,
-} from '@mui/material';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import EmailIcon from '@mui/icons-material/Email';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
-import * as CryptoJS from 'crypto-js';
-import Joi from 'joi-browser';
+} from "@mui/material";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import EmailIcon from "@mui/icons-material/Email";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import * as CryptoJS from "crypto-js";
+import Joi from "joi-browser";
 
-import { UserContext } from '../../context/user-context';
-import authApi from '../../services/auth-api';
-import styles from './LoginForm.module.css';
+import { UserContext } from "../../../context/user-context.tsx";
+import authApi from "../../../services/auth-api.js";
+import styles from "./LoginForm.module.css";
 
 const initialFormState = {
-  email: '',
-  password: '',
+  email: "",
+  password: "",
 };
 
 const schema = {
@@ -127,23 +127,29 @@ export default function LoginForm({ onLoad }) {
     if (!error) {
       try {
         onLoad(true);
-        const hashedPassword = CryptoJS.HmacSHA256(loginForm['password'], key).toString();
-        const response = await authApi.post(`/login`, { ...loginForm, password: hashedPassword });
-        console.log('Login user:', response.data);
+        const hashedPassword = CryptoJS.HmacSHA256(
+          loginForm["password"],
+          key,
+        ).toString();
+        const response = await authApi.post(`/login`, {
+          ...loginForm,
+          password: hashedPassword,
+        });
+        console.log("Login user:", response.data);
 
         /* TODO:
         Refactor not to store token but using HTTP-only cookies method as the browser manages the cookie.
         The cookie will be automatically sent with each request to the server.
         Fetch user details using the token and store inside the authCtx
         //*/ //
-        const userDetails = await getUserDetails(loginForm['email']);
+        const userDetails = await getUserDetails(loginForm["email"]);
         if (userDetails) {
           userCtx.handleLogin(userDetails);
           setLoginForm(initialFormState); // Clear the form
-          navigate('..');
+          navigate("..");
         }
       } catch (error) {
-        console.error('Login error:', error.message);
+        console.error("Login error:", error.message);
       } finally {
         onLoad(false);
       }
@@ -162,8 +168,9 @@ export default function LoginForm({ onLoad }) {
   };
 
   const transformErrorMessage = (message) => {
-    let transformedMessage = message.replace(/\"[^\"]*\"/, '').trim(); // Extract the part after the quoted text
-    transformedMessage = transformedMessage.charAt(0).toUpperCase() + transformedMessage.slice(1); // Capitalize the first letter of the resulting string
+    let transformedMessage = message.replace(/\"[^\"]*\"/, "").trim(); // Extract the part after the quoted text
+    transformedMessage =
+      transformedMessage.charAt(0).toUpperCase() + transformedMessage.slice(1); // Capitalize the first letter of the resulting string
 
     return transformedMessage;
   };
@@ -171,20 +178,20 @@ export default function LoginForm({ onLoad }) {
   const getUserDetails = async (email) => {
     try {
       const response = await authApi.get(`/user?email=${email}`);
-      console.log('User details:', response.data);
+      console.log("User details:", response.data);
       return response.data;
     } catch (error) {
-      console.error('User details error:', error.message);
+      console.error("User details error:", error.message);
       return null;
     }
   };
 
   return (
     <form className={styles.loginForm} onSubmit={handleLogin} noValidate>
-      <Avatar sx={{ margin: 0, background: '#ff4b2b' }}>
+      <Avatar sx={{ margin: 0, background: "#ff4b2b" }}>
         <LockOutlinedIcon />
       </Avatar>
-      <Typography variant="h5" component="h1" sx={{ fontWeight: 'bold' }}>
+      <Typography variant="h5" component="h1" sx={{ fontWeight: "bold" }}>
         Sign in
       </Typography>
       <TextField
@@ -211,12 +218,18 @@ export default function LoginForm({ onLoad }) {
         required
       />
 
-      <FormControl variant="filled" margin="normal" size="small" fullWidth required>
+      <FormControl
+        variant="filled"
+        margin="normal"
+        size="small"
+        fullWidth
+        required
+      >
         <InputLabel htmlFor="password">Password</InputLabel>
         <FilledInput
           id="password"
           name="password"
-          type={showPassword ? 'text' : 'password'}
+          type={showPassword ? "text" : "password"}
           endAdornment={
             <InputAdornment position="end">
               <IconButton
@@ -236,12 +249,23 @@ export default function LoginForm({ onLoad }) {
           onChange={handleFormChange}
           error={!!error.password}
         />
-        <FormHelperText id="filled-password-helper-text" error={!!error.password}>
+        <FormHelperText
+          id="filled-password-helper-text"
+          error={!!error.password}
+        >
           {error.password}
         </FormHelperText>
       </FormControl>
 
-      <a style={{ color: '#333', fontSize: '14px', textDecoration: 'none', margin: '15px 0' }} href="#">
+      <a
+        style={{
+          color: "#333",
+          fontSize: "14px",
+          textDecoration: "none",
+          margin: "15px 0",
+        }}
+        href="#"
+      >
         Forgot your password?
       </a>
 

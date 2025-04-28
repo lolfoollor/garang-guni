@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout.tsx";
 import Welcome from "./pages/Welcome.jsx";
 import Contact from "./pages/Contact.jsx";
-import Auth from "./pages/Auth/Auth.jsx";
+import Auth from "./pages/auth/Auth.jsx";
 import BookNow from "./pages/BookNow.jsx";
 import List from "./pages/List.jsx";
 import Schedule from "./pages/Schedule.jsx";

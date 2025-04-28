@@ -2,12 +2,12 @@ import { MapContainer, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styles from "./ScheduleMap.module.css";
-import station1 from "../assets/station1.jpg";
-import station2 from "../assets/station2.jpg";
-import station3 from "../assets/station3.jpg";
-import station4 from "../assets/station4.jpg";
-import station5 from "../assets/station5.jpg";
-import station6 from "../assets/station6.jpg";
+import station1 from "../../assets/station1.jpg";
+import station2 from "../../assets/station2.jpg";
+import station3 from "../../assets/station3.jpg";
+import station4 from "../../assets/station4.jpg";
+import station5 from "../../assets/station5.jpg";
+import station6 from "../../assets/station6.jpg";
 
 const stations = [
   {
@@ -68,25 +68,40 @@ function ScheduleMap() {
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
-    shadowUrl: "https://unpkg.com/browse/leaflet@1.9.4/dist/images/marker-shadow.png",
+    shadowUrl:
+      "https://unpkg.com/browse/leaflet@1.9.4/dist/images/marker-shadow.png",
     shadowSize: [41, 41],
   });
 
   return (
-    <MapContainer center={[1.3521, 103.8198]} zoom={12} className={styles.container}>
+    <MapContainer
+      center={[1.3521, 103.8198]}
+      zoom={12}
+      className={styles.container}
+    >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       {stations.map((station, index) => (
         <Marker key={index} position={station.position} icon={defaultIcon}>
-          <Tooltip direction="top" offset={[0, -50]} opacity={1} permanent className={styles.tooltip}>
+          <Tooltip
+            direction="top"
+            offset={[0, -50]}
+            opacity={1}
+            permanent
+            className={styles.tooltip}
+          >
             {station.date}
           </Tooltip>
           <Popup>
             <div className={styles.popupContent}>
               <div className={styles.stationDetail}>
-                <img src={station.photo} alt={station.name} className={styles.stationPhoto} />
+                <img
+                  src={station.photo}
+                  alt={station.name}
+                  className={styles.stationPhoto}
+                />
                 <h3>{station.name}</h3>
               </div>
               <div className={styles.stationDetail}>

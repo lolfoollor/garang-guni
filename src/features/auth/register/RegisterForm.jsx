@@ -1,8 +1,8 @@
-import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { Button as BaseButton, buttonClasses } from '@mui/base/Button';
-import { styled } from '@mui/system';
+import { Button as BaseButton, buttonClasses } from "@mui/base/Button";
+import { styled } from "@mui/system";
 import {
   Avatar,
   FilledInput,
@@ -14,26 +14,26 @@ import {
   InputLabel,
   TextField,
   Typography,
-} from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
-import AppRegistrationOutlinedIcon from '@mui/icons-material/AppRegistrationOutlined';
-import PersonIcon from '@mui/icons-material/Person';
-import EmailIcon from '@mui/icons-material/Email';
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import AppRegistrationOutlinedIcon from "@mui/icons-material/AppRegistrationOutlined";
+import PersonIcon from "@mui/icons-material/Person";
+import EmailIcon from "@mui/icons-material/Email";
 // import PhoneIcon from '@mui/icons-material/Phone';
-import * as CryptoJS from 'crypto-js';
-import Joi from 'joi-browser';
+import * as CryptoJS from "crypto-js";
+import Joi from "joi-browser";
 
-import { UserContext } from '../../context/user-context';
-import authApi from '../../services/auth-api';
-import styles from './RegisterForm.module.css';
+import { UserContext } from "../../../context/user-context.tsx";
+import authApi from "../../../services/auth-api.js";
+import styles from "./RegisterForm.module.css";
 
 const initialFormState = {
-  firstName: '',
-  lastName: '',
+  firstName: "",
+  lastName: "",
   // gender: '',
-  email: '',
-  password: '',
-  confirmPassword: '',
+  email: "",
+  password: "",
+  confirmPassword: "",
   // mobileNo: '',
   // postalCode: null,
   // address: '',
@@ -54,15 +54,17 @@ const schema = {
     .required(),
   email: Joi.string().email().required(),
   password: Joi.string()
-    .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)
+    .regex(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+    )
     .required(),
   confirmPassword: Joi.any()
-    .valid(Joi.ref('password'))
+    .valid(Joi.ref("password"))
     .required()
     .options({
       language: {
         any: {
-          allowOnly: 'must match password',
+          allowOnly: "must match password",
         },
       },
     }),
@@ -104,40 +106,40 @@ const Button = styled(BaseButton)(
 );
 
 const getErrorMessage = (field, errorType) => {
-  let message = '';
+  let message = "";
   switch (field) {
-    case 'firstName':
-      if (errorType === 'any.empty') {
-        message = 'First name is required';
-      } else if (errorType === 'string.regex.base') {
-        message = 'Please enter a valid first name';
+    case "firstName":
+      if (errorType === "any.empty") {
+        message = "First name is required";
+      } else if (errorType === "string.regex.base") {
+        message = "Please enter a valid first name";
       }
       break;
-    case 'lastName':
-      if (errorType === 'any.empty') {
-        message = 'Last name is required';
-      } else if (errorType === 'string.regex.base') {
-        message = 'Please enter a valid last name';
+    case "lastName":
+      if (errorType === "any.empty") {
+        message = "Last name is required";
+      } else if (errorType === "string.regex.base") {
+        message = "Please enter a valid last name";
       }
       break;
-    case 'email':
-      if (errorType === 'any.empty') {
-        message = 'Email is required';
-      } else if (errorType === 'string.email') {
-        message = 'Please enter a valid email';
+    case "email":
+      if (errorType === "any.empty") {
+        message = "Email is required";
+      } else if (errorType === "string.email") {
+        message = "Please enter a valid email";
       }
       break;
-    case 'password':
-      if (errorType === 'any.empty') {
-        message = 'Password is required';
-      } else if (errorType === 'string.regex.base') {
+    case "password":
+      if (errorType === "any.empty") {
+        message = "Password is required";
+      } else if (errorType === "string.regex.base") {
         message =
-          'Password must be at least 8 characters long with a combination of uppercase letters, lowercase letters, numbers, and symbols';
+          "Password must be at least 8 characters long with a combination of uppercase letters, lowercase letters, numbers, and symbols";
       }
       break;
-    case 'confirmPassword':
-      if (errorType === 'any.allowOnly') {
-        message = 'Passwords must match';
+    case "confirmPassword":
+      if (errorType === "any.allowOnly") {
+        message = "Passwords must match";
       }
       break;
   }
@@ -184,29 +186,32 @@ export default function RegisterForm({ onLoad }) {
     let fieldSchema;
     let objToValidate;
 
-    if (name === 'password' || name === 'confirmPassword') {
+    if (name === "password" || name === "confirmPassword") {
       fieldSchema = {
         password: schema.password,
         confirmPassword: schema.confirmPassword,
       };
       objToValidate = {
-        password: name === 'password' ? value : registerForm.password,
-        confirmPassword: name === 'confirmPassword' ? value : registerForm.confirmPassword,
+        password: name === "password" ? value : registerForm.password,
+        confirmPassword:
+          name === "confirmPassword" ? value : registerForm.confirmPassword,
       };
     } else {
       fieldSchema = { [name]: schema[name] };
       objToValidate = { [name]: value };
     }
 
-    const result = Joi.validate(objToValidate, fieldSchema, { abortEarly: false });
+    const result = Joi.validate(objToValidate, fieldSchema, {
+      abortEarly: false,
+    });
     const { error } = result;
 
     if (!error) {
       setError((prevState) => {
         const newError = { ...prevState };
         delete newError[name];
-        if (name === 'password' || name === 'confirmPassword') {
-          delete newError['confirmPassword'];
+        if (name === "password" || name === "confirmPassword") {
+          delete newError["confirmPassword"];
         }
         return newError;
       });
@@ -249,8 +254,11 @@ export default function RegisterForm({ onLoad }) {
     if (!error) {
       try {
         onLoad(true);
-        const hashedPassword = CryptoJS.HmacSHA256(registerForm['password'], key).toString();
-        delete registerForm['confirmPassword'];
+        const hashedPassword = CryptoJS.HmacSHA256(
+          registerForm["password"],
+          key,
+        ).toString();
+        delete registerForm["confirmPassword"];
         const updatedForm = {
           ...registerForm,
           mobileNumber: null,
@@ -263,21 +271,21 @@ export default function RegisterForm({ onLoad }) {
           password: hashedPassword,
         };
         const response = await authApi.post(`/user`, updatedForm);
-        console.log('New user:', response.data);
+        console.log("New user:", response.data);
 
         /* TODO:
         Refactor not to store token but using HTTP-only cookies method as the browser manages the cookie.
         The cookie will be automatically sent with each request to the server.
         Fetch user details using the token and store inside the authCtx
         //*/ //
-        const userDetails = await getUserDetails(registerForm['email']);
+        const userDetails = await getUserDetails(registerForm["email"]);
         if (userDetails) {
           userCtx.handleLogin(userDetails);
           setRegisterForm(initialFormState); // Clear the form
-          navigate('..');
+          navigate("..");
         }
       } catch (error) {
-        console.error('Register error:', error.message);
+        console.error("Register error:", error.message);
       } finally {
         onLoad(false);
       }
@@ -309,20 +317,20 @@ export default function RegisterForm({ onLoad }) {
   const getUserDetails = async (email) => {
     try {
       const response = await authApi.get(`/user?email=${email}`);
-      console.log('User details:', response.data);
+      console.log("User details:", response.data);
       return response.data;
     } catch (error) {
-      console.error('User details error:', error.message);
+      console.error("User details error:", error.message);
       return null;
     }
   };
 
   return (
     <form className={styles.registerForm} onSubmit={handleRegister} noValidate>
-      <Avatar sx={{ margin: 0, background: '#ff4b2b' }}>
+      <Avatar sx={{ margin: 0, background: "#ff4b2b" }}>
         <AppRegistrationOutlinedIcon />
       </Avatar>
-      <Typography variant="h5" component="h1" sx={{ fontWeight: 'bold' }}>
+      <Typography variant="h5" component="h1" sx={{ fontWeight: "bold" }}>
         Create Account
       </Typography>
       <Grid container spacing={2}>
@@ -401,12 +409,18 @@ export default function RegisterForm({ onLoad }) {
         fullWidth
         required
       />
-      <FormControl variant="filled" margin="dense" size="small" fullWidth required>
+      <FormControl
+        variant="filled"
+        margin="dense"
+        size="small"
+        fullWidth
+        required
+      >
         <InputLabel htmlFor="password">Password</InputLabel>
         <FilledInput
           id="password"
           name="password"
-          type={showPassword ? 'text' : 'password'}
+          type={showPassword ? "text" : "password"}
           endAdornment={
             <InputAdornment position="end">
               <IconButton
@@ -428,17 +442,27 @@ export default function RegisterForm({ onLoad }) {
         <FormHelperText
           id="filled-password-helper-text"
           error={!!error.password}
-          sx={{ lineHeight: 'unset !important', margin: '4px 10px 0 !important', fontSize: '0.7rem !important' }}
+          sx={{
+            lineHeight: "unset !important",
+            margin: "4px 10px 0 !important",
+            fontSize: "0.7rem !important",
+          }}
         >
           {error.password}
         </FormHelperText>
       </FormControl>
-      <FormControl variant="filled" margin="dense" size="small" fullWidth required>
+      <FormControl
+        variant="filled"
+        margin="dense"
+        size="small"
+        fullWidth
+        required
+      >
         <InputLabel htmlFor="confirmPassword">Confirm Password</InputLabel>
         <FilledInput
           id="confirmPassword"
           name="confirmPassword"
-          type={showCfmPassword ? 'text' : 'password'}
+          type={showCfmPassword ? "text" : "password"}
           endAdornment={
             <InputAdornment position="end">
               <IconButton
@@ -460,7 +484,11 @@ export default function RegisterForm({ onLoad }) {
         <FormHelperText
           id="filled-confirm-password-helper-text"
           error={!!error.confirmPassword}
-          sx={{ lineHeight: 'unset !important', margin: '4px 10px 0 !important', fontSize: '0.7rem !important' }}
+          sx={{
+            lineHeight: "unset !important",
+            margin: "4px 10px 0 !important",
+            fontSize: "0.7rem !important",
+          }}
         >
           {error.confirmPassword}
         </FormHelperText>

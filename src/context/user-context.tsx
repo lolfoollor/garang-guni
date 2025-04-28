@@ -17,7 +17,7 @@ interface UserContextType {
     unitNumber: string | null;
   };
   isLoggedIn: boolean;
-  handleLogin: (userData: UserContextType["credentials"]) => void;
+  handleLogin: (userData: UserContextType["credentials"][]) => void;
   handleLogout: () => void;
 }
 
@@ -52,9 +52,11 @@ export function UserContextProvider({ children }: { children: ReactNode }) {
     initialContextState["isLoggedIn"],
   );
 
-  const handleLogin = (userData: UserContextType["credentials"]) => {
+  const handleLogin = (userData: UserContextType["credentials"][]) => {
     setIsLoggedIn(true);
-    setCredentials(userData);
+    // For the sake of just refactoring this to TS, will leave this be first.
+    // TODO: Actually fix the login Logic to get one USER ONLY.
+    setCredentials(userData[0]);
   };
 
   const handleLogout = () => {
