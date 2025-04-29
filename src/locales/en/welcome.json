@@ -1,0 +1,35 @@
+{
+  "about_us": {
+    "header": "Who Are We",
+    "text": "We are **GarangKuni ー turning trash into treasure**.  \nOur mission is simple: Connect households with collectors and offer the best rates for your unwanted items. Through our service, we simplify and modernize the traditional Karung Guni process, making recycling easier, faster, and more rewarding.",
+    "photos": [
+      { "src": "karungGuni2.jpg", "alt": "Photo of Karang Guni" },
+      { "src": "karungGuni3.jpg", "alt": "Photo of Karang Guni" },
+      { "src": "karungGuni4.jpg", "alt": "Photo of Karang Guni" }
+    ]
+  },
+  "introduction": {
+    "photo": { "src": "karungGuni.jpg", "alt": "Photo of Karang Guni" },
+    "paragraphs": {
+      "paragraph_one": {
+        "catchphrase": "GA-RANG-GU-NI ! BA-BU-BA-BU!",
+        "text": "Ga-Rang-Gu-Ni also known as *(Karung Guni)*. The name is Malay, which translates to 'gunny sack' in English."
+      },
+      "paragraph_two": {
+        "catchphrase": "POH-ZHUA! GU-SA-KOR! PAI_LEH-LIO! DIAN-SI-KI!...",
+        "text": "They usually collect unwanted household items, and would range from old electronics, newspapers, to clothing and furniture. It started in 1970s, and has since become a significant part of Singapore's recycling backbone (*rag-and-bone*)."
+      }
+    }
+  },
+  "selling_point": {
+    "header": "Why We Are Special",
+    "reasons": [
+      "We provide **free collection service** right on your doorstep.",
+      "We got **wide coverage** and routine around the island every week.",
+      "We will pay you **best rate** in Singapore for your trash.",
+      "We provide **online payment**. Just simply put your goods outside your door.",
+      "We also do donation. Collect and donate the earnings to those in need.",
+      "We are **expanding**! Come join us in our journey to make the world a better place."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.sellingPointsContainer {
+  @apply flex justify-center;
+}
+
+.sellingPointMiddleContainer {
+  @apply flex flex-col;
+}
+
+.sellingPointContainer {
+  @apply flex gap-6 items-center text-left my-2;
+}
+
+.sellingPointIcon {
+  @apply text-primary-500 min-w-5 min-h-5;
+}
