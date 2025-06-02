@@ -28,7 +28,7 @@ const HeaderUserSection = () => {
             {credentials.lastname && credentials.lastname}
           </p>
         ) : (
-          <NavLink to="/auth">Login/Register</NavLink>
+          <NavLink to="/auth">Login</NavLink>
         )}
       </div>
       <div className={styles.usernameIconContainer}>
