@@ -1,0 +1,5 @@
+{
+  "image": {
+    "notFound": "No image found in IndexedDB for key: {{key}}"
+  }
+}
