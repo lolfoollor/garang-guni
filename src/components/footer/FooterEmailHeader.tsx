@@ -1,5 +1,5 @@
 import styles from "./FooterEmailHeader.module.css";
-import footerMsg from "@/locales/en/footer.json";
+import footerMsg from "@/locales/en/components/footer.json";
 
 const FooterEmailHeader = () => {
   return (

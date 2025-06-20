@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./FooterCopyright.module.css";
-import footerMsg from "@/locales/en/footer.json";
+import footerMsg from "@/locales/en/components/footer.json";
 import Button from "../Button";
 import { ROUTES } from "../../constants/routes";
 

@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import { FaThumbsUp } from "react-icons/fa";
 import styles from "./SellingPoint.module.css";
-import welcomeMsg from "@/locales/en/welcome.json";
+import welcomeMsg from "@/locales/en/components/welcome.json";
 
 const SellingPoint = () => {
   return (

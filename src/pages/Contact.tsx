@@ -4,8 +4,8 @@ import contactUsBanner from "../assets/contactUsBanner.png";
 import darkContactUsBanner from "../assets/darkContactUsBanner.png";
 import ContactInfoBox from "../features/contacts/ContactInfoBox.jsx";
 import styles from "./Contact.module.css";
-import ModalDialog from "../components/ModalDialog.jsx";
 import ContactForm from "../features/contacts/ContactForm.jsx";
+import { Dialog } from "@mui/material";
 
 const CONTACT_DETAILS = ["📞 Phone: 87414896", "📧 Email: test@test.com"];
 const OPERATING_HOURS = ["Mon-Fri (9am-6pm)", "Saturday (9am-12pm)"];
@@ -54,9 +54,9 @@ function Contact() {
           <button className={styles.inquryButton} onClick={toggleInquiryForm}>
             Contact us
           </button>
-          <ModalDialog isOpen={isShowingForm} handleClose={toggleInquiryForm}>
+          <Dialog open={isShowingForm} onClose={toggleInquiryForm}>
             <ContactForm handleClose={toggleInquiryForm} isDark={isDark} />
-          </ModalDialog>
+          </Dialog>
         </div>
       </div>
     </div>

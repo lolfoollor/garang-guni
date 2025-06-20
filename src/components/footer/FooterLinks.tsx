@@ -1,5 +1,5 @@
 import styles from "./FooterLinks.module.css";
-import footerMsg from "@/locales/en/footer.json";
+import footerMsg from "@/locales/en/components/footer.json";
 import { useNavigate } from "react-router-dom";
 import Button from "../Button";
 import { ROUTES } from "../../constants/routes";

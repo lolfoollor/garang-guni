@@ -1,8 +1,11 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import styles from "./FooterEmailForm.module.css";
 import { validateEmail } from "../../utils/validation";
-import formMsgs from "@/locales/en/formMsgs.json";
+import formMsgs from "@/locales/en/components/formMsgs.json";
 import Button from "../Button";
+import { interpolateMessage } from "@/utils/textUtils";
+
+const EMAIL_TO_UNSUBSCRIBE = "test@test.test";
 
 const FooterEmailForm = () => {
   const [email, setEmail] = useState<string>(formMsgs.form.email.empty);
@@ -25,10 +28,15 @@ const FooterEmailForm = () => {
 
     if (email === formMsgs.form.email.empty) {
       alert(formMsgs.form.email.alert_empty);
+      return;
     }
 
     setEmail(formMsgs.form.email.empty);
-    alert(formMsgs.form.email.alert_success);
+    alert(
+      interpolateMessage(formMsgs.form.email.alert_success, {
+        email: EMAIL_TO_UNSUBSCRIBE,
+      }),
+    );
 
     // TODO: Make it do something.
   };

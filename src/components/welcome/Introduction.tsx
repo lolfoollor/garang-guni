@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
-import { getImageUrl } from "../../utils/imageUtils";
 import styles from "./Introduction.module.css";
-import welcomeMsg from "@/locales/en/welcome.json";
+import welcomeMsg from "@/locales/en/components/welcome.json";
+import { getImageUrl } from "@/utils/imageUtils";
 
 const Introduction = () => {
   const garangGuniPhoto = (

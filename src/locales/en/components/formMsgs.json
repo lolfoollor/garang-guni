@@ -6,7 +6,7 @@
       "required": "Email is required.",
       "invalid": "Please enter a valid email address.",
       "alert_empty": "Please enter an email address first.",
-      "alert_success": "Email Registered. If you would like to unsubscribe, please email to {Insert_Email_Here}.",
+      "alert_success": "Email Registered. If you would like to unsubscribe, please email to {{email}}.",
       "subscribe": "Subscribe"
     }
   }
