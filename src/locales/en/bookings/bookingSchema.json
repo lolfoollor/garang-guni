@@ -1,0 +1,9 @@
+{
+  "schema": {
+    "required": {
+      "date": "Date is required",
+      "address": "Address is required",
+      "preferredTiming": "Preferred timing is required"
+    }
+  }
+}
