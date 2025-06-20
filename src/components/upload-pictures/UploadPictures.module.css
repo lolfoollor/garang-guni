@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.dropZoneContainer {
+  @apply flex text-center p-5 border-4 min-w-20 h-60 border-primary text-primary
+    border-dashed w-full justify-center items-center xs:h-70 hover:text-primary-700
+    hover:border-primary-700 hover:bg-whiteGreen active:bg-whiteGreen 
+    active:border-primary-800;
+}
+
+.uploadContainer {
+  @apply flex flex-col text-center items-center gap-2 w-full;
+}
+
+.uploadIcon {
+  @apply text-2xl xs:text-5xl transition-colors duration-200;
+}
+
+.dragged {
+  @apply text-primary-700;
+}
+
+.text {
+  @apply text-gray-400 text-xs xs:text-xl transition-colors duration-200;
+}
+
+.btn {
+  @apply rounded-md text-white px-2 xs:text-xl xs:px-4 xs:py-2
+    transition-colors duration-200 bg-primary;
+}
+
+.statusMsgContainer {
+  @apply w-full;
+}
+
+.error {
+  @apply font-bold text-red-500 max-w-full overflow-clip;
+}

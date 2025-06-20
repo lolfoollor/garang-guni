@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.headerText {
+  @apply text-sm xs:text-base sm:text-xl;
+}
+
+.bodyText {
+  @apply text-xs xs:text-sm sm:text-base;
+}
+
+.closeBtn {
+  @apply !text-primary;
+}

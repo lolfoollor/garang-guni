@@ -2,6 +2,6 @@
 @reference "@/index.css";
 
 .button {
-  @apply bg-primary-700 cursor-pointer justify-center items-center 
+  @apply bg-primary-700 cursor-pointer justify-center text-white items-center 
     px-2.5 py-5 rounded-md font-medium transition-colors duration-200;
 }
