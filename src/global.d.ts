@@ -1,3 +1,5 @@
+/// <reference types="redux-persist" />
+
 declare module "*.module.css" {
   const classes: { [key: string]: string };
   export default classes;
@@ -11,3 +13,5 @@ declare module "*.json" {
 declare module "*.css";
 
 declare module "*.jpg";
+
+declare module "*.png";
