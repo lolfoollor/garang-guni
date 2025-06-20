@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.container {
+  @apply flex flex-col gap-2 max-h-38 text-xs xs:text-sm md:text-base;
+}
+
+.category {
+  @apply font-bold;
+}
+
+.list {
+  @apply list-disc pl-6 overflow-auto;
+}
+
+.values {
+  @apply break-all w-full overflow-auto;
+}

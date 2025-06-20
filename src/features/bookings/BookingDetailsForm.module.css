@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.bookNowContainer {
+  @apply min-w-50 overflow-auto;
+}
+
+.bookingFormBannerContainer {
+  @apply mt-8 mb-6;
+}
+
+.bookingFormContentContainer {
+  @apply flex flex-col px-2 gap-2 mb-2 sm:px-10 xs:px-5;
+}
+
+.dateTimeContainer {
+  @apply flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between;
+}
+
+.datePickerContainer {
+  @apply w-full xs:w-1/2;
+}
+
+.addressInputContainer {
+  @apply w-full my-2;
+}
+
+.addressInput {
+  @apply w-full;
+}
+
+.addressInput input {
+  @apply text-sm;
+}
+
+.submitBtnContainer {
+  @apply flex justify-end mt-4;
+}
+
+.submitBtn {
+  @apply rounded-md text-white px-2 xs:text-xl xs:px-4 py-2
+    transition-colors duration-200 bg-primary hover:bg-primary-700 active:bg-primary-800;
+}

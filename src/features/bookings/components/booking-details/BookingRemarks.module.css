@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.remarks {
+  @apply min-h-40 !text-xs !items-start xs:!text-sm;
+}

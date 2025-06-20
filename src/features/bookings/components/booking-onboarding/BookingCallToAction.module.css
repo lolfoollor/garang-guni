@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.highlight {
+  @apply text-bookingPurple;
+}
+
+.highlightLink {
+  @apply text-bookingPurple hover:text-bookingPurple-hover 
+    active:text-bookingPurple-onPress;
+}
+
+.textBoxContainer {
+  @apply font-roboto font-extrabold;
+}
+
+.phraseHeader {
+  @apply text-bookingPurple text-sm xs:text-lg sm:text-base lg:text-lg xl:text-xl;
+}
+
+.phrase {
+  @apply text-lg xs:text-3xl sm:text-2xl lg:text-4xl xl:text-5xl;
+}
+
+.phraseFooter {
+  @apply mt-4 text-xs xs:text-sm sm:text-xs xl:text-sm xl:mt-6 text-lightGray;
+}

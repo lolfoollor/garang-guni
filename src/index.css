@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -51,7 +52,12 @@
   --color-whiteGreen: #e6ffe6;
   --color-tabLightColor: #ffffff;
   --color-lightGreen: #90ee90;
+  --color-bookingPurple: #6016bb;
+  --color-bookingPurple-hover: #7e34d9;
+  --color-bookingPurple-onPress: #42029d;
+  --color-lightGray: #00000066;
   --breakpoint-xs: 25rem;
+  --font-roboto: "Roboto", sans-serif;
 }
 
 @layer base {

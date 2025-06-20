@@ -1,0 +1,37 @@
+{
+  "banner": "Request A Booking",
+  "dateLabel": "Select a booking date",
+  "addressLabel": "Address",
+  "itemTypesLabel": "Types of Items:",
+  "buttonNextLabel": "Next Step",
+  "timeOptions": ["Morning", "Afternoon"],
+  "categoryOptions": [
+    {
+      "label": "Recyclables",
+      "options": [
+        "Newspaper",
+        "Paper",
+        "Magazine",
+        "Books",
+        "Brochures",
+        "Cardboard",
+        "Cans",
+        "Scrap Metal"
+      ]
+    },
+    {
+      "label": "Clothings",
+      "options": ["Clothes", "Shoes", "Bags", "Curtain"]
+    },
+    {
+      "label": "Electronics",
+      "options": [
+        "Television",
+        "Radio",
+        "Mobile Phone",
+        "Laptop",
+        "Power Supply"
+      ]
+    }
+  ]
+}

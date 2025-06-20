@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.bookNowContainer {
+  @apply flex h-fit flex-col items-center my-8 p-2.5 rounded-3xl
+    xs:flex-row xs:w-fit sm:w-sm md:w-md lg:w-lg xl:w-xl;
+  box-shadow: 4px 4px 10px rgba(96, 22, 187, 1);
+  animation: float 2s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(10px);
+  }
+}
+
+.datePickerContainer {
+  @apply h-full flex flex-col self-baseline w-40 p-2 xs:pr-0;
+}
+
+.datePickerContainer input {
+  @apply h-8 w-full text-base;
+}
+
+.addressInputContainer {
+  @apply h-full flex flex-col self-baseline p-4 xs:py-2 xs:px-0 w-full 
+    xs:w-48 sm:w-32 md:w-40 lg:w-52 xl:w-60;
+}
+
+.buttonContainer {
+  @apply flex grow justify-center;
+}
+
+.bookNowButton {
+  @apply flex text-sm py-2.5 px-5 justify-center bg-bookingPurple text-white
+    font-medium border border-transparent duration-200 rounded-full transition-colors
+    hover:bg-bookingPurple-hover hover:text-white/80 
+    active:bg-bookingPurple-onPress active:text-[#e6e6e6]
+    xs:py-1.5 xs:px-3 xs:m-2
+    sm:py-1 sm:px-2 md:py-1.5 md:px-3 lg:py-2 lg:px-4 xl:py-2.5 xl:px-5;
+}
