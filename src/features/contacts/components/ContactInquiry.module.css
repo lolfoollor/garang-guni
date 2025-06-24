@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.inquiryBox {
+  @apply flex flex-col w-full items-center sm:items-baseline;
+}
+
+.inquiryHeader {
+  @apply font-bold text-xl md:text-2xl;
+}
+
+.inquiryText {
+  @apply flex py-2.5 text-sm md:text-base xl:text-lg;
+}
+
+.inquryButtonContainer {
+  @apply py-2.5;
+}
+
+.inquryButton {
+  @apply rounded-md px-4 py-2 text-white bg-primary duration-200
+    text-base font-medium cursor-pointer transition-colors hover:bg-primary-700
+    active:bg-primary-800;
+}
+
+.dark {
+  @apply text-black bg-white;
+}

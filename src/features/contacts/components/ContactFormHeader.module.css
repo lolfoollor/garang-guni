@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.headerContainer {
+  @apply flex flex-col items-center grow;
+}
+
+.title {
+  @apply text-xl xs:text-2xl font-bold mb-2.5;
+}
+
+.subtitle {
+  @apply flex gap-1.5 text-xs xs:text-sm items-center justify-center flex-wrap;
+}
+
+.highlight {
+  @apply font-bold text-primary text-sm xs:text-[length:inherit];
+}
+
+.date {
+  @apply text-sm xs:text-base text-center;
+}
+
+.sectionTitle {
+  @apply text-base xs:text-xl font-bold my-5 text-center;
+}

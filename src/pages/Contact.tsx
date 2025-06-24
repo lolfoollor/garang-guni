@@ -1,64 +1,38 @@
-import { useState } from "react";
-
-import contactUsBanner from "../assets/contactUsBanner.png";
-import darkContactUsBanner from "../assets/darkContactUsBanner.png";
-import ContactInfoBox from "../features/contacts/ContactInfoBox.jsx";
 import styles from "./Contact.module.css";
-import ContactForm from "../features/contacts/ContactForm.jsx";
-import { Dialog } from "@mui/material";
-
-const CONTACT_DETAILS = ["📞 Phone: 87414896", "📧 Email: test@test.com"];
-const OPERATING_HOURS = ["Mon-Fri (9am-6pm)", "Saturday (9am-12pm)"];
-const ADDRESS = [
-  "99 Marshmallow Street",
-  "#00-00 Spaghetti Tower",
-  "Singapore ---101 🔥",
-];
+import ContentWrapper from "@/components/ContentWrapper";
+import ContactBanner from "@/features/contacts/components/ContactBanner";
+import ContactInquiry from "@/features/contacts/components/ContactInquiry";
+import ContactMeetUs from "@/features/contacts/components/ContactMeetUs";
+import ContactVisitUs from "@/features/contacts/components/ContactVisitUs";
 
 function Contact() {
-  const [isShowingForm, setIsShowingForm] = useState(false);
-  // Temp until light mode context is introduced.
+  // TODO: Actual Light Mode. Temp until light mode context is introduced.
   const currentHour = new Date().getHours();
   const isDark = currentHour >= 18 || currentHour <= 5;
 
-  const toggleInquiryForm = () => {
-    setIsShowingForm((prevState) => !prevState);
+  const CONTACT_SECTIONS = {
+    "meetUs": <ContactMeetUs />,
+    "inquiry": <ContactInquiry isDark={isDark} />,
+    "visitUs": <ContactVisitUs />,
   };
 
+  const renderContactSections = () =>
+    Object.entries(CONTACT_SECTIONS).map(([key, value]) => (
+      <div key={key} className={styles.contactSection}>
+        {value}
+      </div>
+    ));
+
   return (
-    <div className={`${styles.containerCol} ${isDark && styles.dark}`}>
-      <div className={styles.contactUsBanner}>
-        <img
-          className={styles.contactUsBannerContent}
-          src={isDark ? darkContactUsBanner : contactUsBanner}
-          alt="banner"
-        />
-      </div>
-      <div className={styles.container}>
-        <div className={styles.meetUs}>
-          <h2>Meet Us</h2>
-          <div className={styles.meetUsContainer}>
-            <ContactInfoBox title="Contact Info" infoList={CONTACT_DETAILS} />
-            <ContactInfoBox
-              title="Operating Hours"
-              infoList={OPERATING_HOURS}
-            />
-            <ContactInfoBox title="Address" infoList={ADDRESS} />
+    <div className={`${styles.contact} ${isDark && styles.dark}`}>
+      <ContentWrapper>
+        <div className={styles.contactContainer}>
+          <ContactBanner isDark={isDark} />
+          <div className={styles.contactSectionContainer}>
+            {renderContactSections()}
           </div>
         </div>
-        <div className={styles.inquiryBox}>
-          <h2>Talk to Us!</h2>
-          <div style={{ padding: "10px 0px" }}>
-            Have a burning question? We would love to hear from you!
-          </div>
-          <button className={styles.inquryButton} onClick={toggleInquiryForm}>
-            Contact us
-          </button>
-          <Dialog open={isShowingForm} onClose={toggleInquiryForm}>
-            <ContactForm handleClose={toggleInquiryForm} isDark={isDark} />
-          </Dialog>
-        </div>
-      </div>
+      </ContentWrapper>
     </div>
   );
 }

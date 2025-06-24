@@ -41,6 +41,7 @@
     "zod": "^3.25.48"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.18",
     "@types/node": "^22.14.1",
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",

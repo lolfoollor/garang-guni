@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.header {
+  @apply font-bold;
+}
+
+.infoBox {
+  @apply flex flex-col mt-3 text-xs md:text-sm xl:text-base gap-1;
+}
+
+.indentItems {
+  @apply sm:indent-3;
+}

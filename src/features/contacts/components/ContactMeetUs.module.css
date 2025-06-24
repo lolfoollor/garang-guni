@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+.meetUs {
+  @apply flex flex-col w-full items-center sm:items-baseline;
+}
+
+.meetUsHeader {
+  @apply font-bold text-xl md:text-2xl;
+}
+
+.meetUsContainer {
+  @apply flex flex-wrap justify-evenly w-full gap-1 
+    sm:gap-0 sm:justify-normal sm:flex-col;
+}
