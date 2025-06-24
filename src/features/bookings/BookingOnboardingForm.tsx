@@ -72,7 +72,7 @@ const BookingOnboardingForm = ({
         />
       </div>
       <div className={styles.addressInputContainer}>
-        <p>Address</p>
+        <p>{msg.addressLabel}</p>
         <TextField
           variant="standard"
           {...register("address")}

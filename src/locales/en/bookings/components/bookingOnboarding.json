@@ -7,5 +7,6 @@
   ],
   "footer": "Find the list of eligible items for trade *here!*",
   "dateLabel": "Date",
-  "submitButtonLabel": "Book Now"
+  "submitButtonLabel": "Book Now",
+  "addressLabel": "Address"
 }
