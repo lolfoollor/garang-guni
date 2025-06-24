@@ -7,7 +7,6 @@ interface BookingRemarksProps {
   name: string;
   control: any;
   header?: string;
-  textLabel?: string;
 }
 
 const BookingRemarks = ({
@@ -26,7 +25,7 @@ const BookingRemarks = ({
             name={name}
             InputProps={{ className: styles.remarks }}
             hiddenLabel
-            variant="filled"
+            variant="outlined"
             value={field.value}
             onChange={field.onChange}
             multiline
