@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.rateListContainer {
+  @apply flex gap-4 flex-col lg:flex-row w-full justify-evenly;
+}
+
+.rateTableContainer {
+  @apply grow;
+}
+
+.category {
+  @apply text-base xs:text-lg sm:text-xl font-bold my-2;
+}

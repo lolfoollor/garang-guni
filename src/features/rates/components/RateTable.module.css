@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.tableContainer {
+  @apply relative;
+}
+
+.table {
+  @apply w-full table-fixed text-xs xs:text-sm;
+}
+
+.tableHeaderContainer {
+  @apply bg-primary text-white;
+}
+
+.tableHeader {
+  @apply first:rounded-tl-md last:rounded-tr-md py-1.5 px-1;
+}
+
+.tableBodyContainer {
+  @apply relative;
+}
+
+.tableBodyRow {
+  @apply odd:bg-white even:bg-gray-200;
+}
+
+.tableLoadingCol {
+  @apply py-4;
+}
+
+.tableBodyRow:last-child .tableLoadingCol {
+  @apply first:rounded-bl-md last:rounded-br-md;
+}
+
+.tableBodyCol {
+  @apply text-center py-1.5 px-1;
+}
+
+.tableBodyRow:last-child .tableBodyCol {
+  @apply first:rounded-bl-md last:rounded-br-md;
+}
+
+.loading {
+  @apply absolute inset-0 flex justify-center items-center;
+}
+
+.loadingBg {
+  @apply absolute inset-0 bg-black opacity-30 rounded-md flex 
+    justify-center items-center;
+}
+
+.loadingIconContainer {
+  @apply pt-4;
+}
