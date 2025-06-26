@@ -11,7 +11,7 @@ interface LinkDetail {
 
 const linksByCategory: { [category: string]: LinkDetail[] } = {
   [footerMsg.categories.home]: [
-    { name: footerMsg.link_labels.list_and_rates, link: ROUTES.LIST },
+    { name: footerMsg.link_labels.our_rates, link: ROUTES.RATES },
     { name: footerMsg.link_labels.drop_off, link: ROUTES.DROP_OFF },
     { name: footerMsg.link_labels.faq, link: ROUTES.FAQ },
   ],

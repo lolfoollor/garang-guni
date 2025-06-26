@@ -3,7 +3,7 @@
   "terms_of_service": "Terms of Service",
   "privacy_policy": "Privacy Policy",
   "cookies": "Cookies",
-  "emailHeader": { 
+  "emailHeader": {
     "header": "Join our newsletter to",
     "bold": "keep up to date with us!"
   },
@@ -13,7 +13,7 @@
     "about_us": "About Us"
   },
   "link_labels": {
-    "list_and_rates": "List & Rates",
+    "our_rates": "Our Rates",
     "drop_off": "Drop Off",
     "faq": "FAQ",
     "manage_booking": "Manage Booking",

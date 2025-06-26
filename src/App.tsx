@@ -5,7 +5,7 @@ import Welcome from "./pages/Welcome";
 import Contact from "./pages/Contact";
 import Auth from "./pages/auth/Auth";
 import BookNow from "./pages/BookNow";
-import List from "./pages/List";
+import Rates from "./pages/Rates.tsx";
 import Schedule from "./pages/Schedule";
 
 import { UserContextProvider } from "./context/user-context";
@@ -27,7 +27,7 @@ const ROOT_CHILDREN_ROUTES = [
   { path: ROUTES.FOLLOW, element: <NotImplemented /> },
   { path: ROUTES.HISTORY, element: <NotImplemented /> },
   { path: ROUTES.JOBS, element: <NotImplemented /> },
-  { path: ROUTES.LIST, element: <List /> },
+  { path: ROUTES.RATES, element: <Rates /> },
   { path: ROUTES.PROFILE, element: <NotImplemented /> },
   { path: ROUTES.SCHEDULE, element: <Schedule /> },
   { path: ROUTES.SETTING, element: <NotImplemented /> },

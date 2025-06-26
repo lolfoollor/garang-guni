@@ -6,7 +6,7 @@ import { UiContext } from "../context/ui-context";
 
 const NAV_LINKS = [
   { to: "/", icon: "fa-solid fa-house", label: "Home" },
-  { to: "/list", icon: "fa-solid fa-table-list", label: "List & Rate" },
+  { to: "/rates", icon: "fa-solid fa-table-list", label: "Our Rates" },
   { to: "/schedule", icon: "fa-solid fa-calendar-days", label: "Schedule" },
   { to: "/book", icon: "fa-regular fa-calendar-check", label: "Book Now" },
   { to: "/contact", icon: "fa-solid fa-phone", label: "Contact Us" },

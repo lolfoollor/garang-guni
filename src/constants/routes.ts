@@ -10,7 +10,7 @@ export const ROUTES = {
   FOLLOW: "/follow",
   HISTORY: "/history",
   JOBS: "/jobs",
-  LIST: "/list",
+  RATES: "/rates",
   PROFILE: "/profile",
   SCHEDULE: "/schedule",
   SETTING: "/setting",

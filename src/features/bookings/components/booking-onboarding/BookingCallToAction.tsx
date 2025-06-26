@@ -29,7 +29,7 @@ const BookingCallToAction = () => {
     <p key={i}>{renderHighlightedText(text)}</p>
   ));
 
-  const phraseFooter = renderHighlightedText(msg.footer, ROUTES.LIST);
+  const phraseFooter = renderHighlightedText(msg.footer, ROUTES.RATES);
 
   return (
     <div className={styles.textBoxContainer}>
