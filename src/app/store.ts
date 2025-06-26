@@ -6,15 +6,17 @@ import bookingDraftReducer, {
 import { persistReducer, persistStore } from "redux-persist";
 import { loadImageBlob } from "./db";
 import { Image } from "@/components/Image";
+import { apiSlice } from "@/features/api/apiSlice";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["bookingDraft"],
+  blacklist: [],
 };
 
 const rootReducer = combineReducers({
   bookingDraft: bookingDraftReducer,
+  [apiSlice.reducerPath]: apiSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -24,7 +26,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }),
+    }).concat(apiSlice.middleware),
 });
 
 const refreshImageBlobs = async () => {
