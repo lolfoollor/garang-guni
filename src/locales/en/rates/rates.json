@@ -1,0 +1,23 @@
+{
+  "table": {
+    "headers": {
+      "name": "Items",
+      "pickupRate": "Pickup",
+      "dropoffRate": "Drop Off",
+      "unit": "Units"
+    }
+  },
+  "list": {
+    "loading": "Loading"
+  },
+  "main": {
+    "header": "OUR RATES"
+  },
+  "footer": {
+    "disclaimer": "All earnings from your contributions will be donated to the **Singapore Environment Council (SEC)**. The **SEC** is dedicated to promoting environmental sustainability and awareness in Singapore through various programs and initiatives. Your donations will help support their efforts to protect and preserve the environment for future generations.",
+    "msgs": {
+      "msg1": "Got something to trade with us? Click here to *book* here!",
+      "msg2": "We welcome you to donate to us too!"
+    }
+  }
+}

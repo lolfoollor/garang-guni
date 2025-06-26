@@ -6,9 +6,9 @@ export function capitalizeFirstLetter(word: string) {
 
 export function interpolateMessage(
   template: string,
-  variables: Record<string, string | number>
+  variables: Record<string, string | number>,
 ): string {
   return template.replace(/\{\{([\w.]+)\}\}/g, (_, key) =>
-    variables[key] !== undefined ? String(variables[key]) : ""
+    variables[key] !== undefined ? String(variables[key]) : "",
   );
 }
