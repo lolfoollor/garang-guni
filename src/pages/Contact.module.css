@@ -16,14 +16,15 @@
 }
 
 .contactSectionContainer {
-  @apply flex flex-col w-full h-full sm:flex-row pb-4;
+  @apply flex flex-col w-full h-full sm:flex-row xl:pb-4;
 }
 
 .contactSection {
   @apply even:bg-gray-300 odd:bg-white w-full sm:w-1/3 h-full py-4 px-4 
-    sm:px-8 sm:first:rounded-l-md sm:last:rounded-r-md;
+    sm:px-8 sm:first:rounded-tl-md sm:last:rounded-tr-md
+    xl:first:rounded-l-md xl:last:rounded-r-md;
 }
 
 .dark .contactSection {
-  @apply even:bg-[#111425] odd:bg-black opacity-90;
+  @apply even:bg-[#111425] odd:bg-black;
 }

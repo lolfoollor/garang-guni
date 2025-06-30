@@ -2,7 +2,8 @@
 @reference "@/index.css";
 
 .bookNowBg {
-  @apply flex min-h-[50vh] lg:min-h-[60vh] xl:min-h-[80vh] w-full justify-center bg-white;
+  @apply flex min-h-[50vh] lg:min-h-[60vh] xl:min-h-[80vh]
+   w-full justify-center bg-white p-2;
 }
 
 .bookNowContainer {
@@ -18,7 +19,7 @@
 }
 
 .recyclingCircle {
-  @apply hidden size-40 sm:flex sm:size-52 md:size-72 lg:size-80 xl:size-fit;
+  @apply hidden size-40 sm:flex sm:size-52 md:size-72 lg:size-80 xl:size-fit p-2;
   animation: spinACW 6s linear infinite;
 }
 
