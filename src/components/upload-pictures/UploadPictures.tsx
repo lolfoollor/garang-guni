@@ -113,7 +113,7 @@ function UploadPictures({
             className={`${styles.btn} group-hover:!bg-primary-700
                 group-active:!bg-primary-800`}
           >
-            Browse Files
+            {msg.dropzone.buttonText}
           </button>
         )}
         <aside className={styles.statusMsgContainer}>
