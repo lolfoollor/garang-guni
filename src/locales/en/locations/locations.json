@@ -1,0 +1,88 @@
+{
+  "main": {
+    "header": "Our Collection Schedule"
+  },
+  "locationCard": {
+    "address": "Address: {{address}}",
+    "days": "Days: {{days}}",
+    "times": "Times: {{times}}"
+  },
+  "locationMap": {
+    "openMsg": "Open ・",
+    "closeMsg": "Closed ・"
+  },
+  "locations": [
+    {
+      "name": "Woodland",
+      "region": "North",
+      "address": "368 Woodlands Ave 1 #07-01 Singapore 730368",
+      "latLng": {
+        "lat": 1.433007,
+        "lng": 103.7867
+      },
+      "days": ["Mon", "Wed", "Fri"],
+      "times": ["9:00 AM - 6:00 PM"],
+      "imgDetail": { "src": "drop-off/map1.png", "alt": "First Location Map" }
+    },
+    {
+      "name": "Seng Kang",
+      "region": "North East",
+      "address": "2 Seng Kang Square, #01-01 Singapore 545025",
+      "latLng": {
+        "lat": 1.392636,
+        "lng": 103.8941
+      },
+      "days": ["Mon", "Wed", "Fri"],
+      "times": ["9:00 AM - 6:00 PM"],
+      "imgDetail": { "src": "drop-off/map2.png", "alt": "Second Location Map" }
+    },
+    {
+      "name": "Tampines",
+      "region": "East",
+      "address": "246 Tampines St. 21, Singapore 521246",
+      "latLng": {
+        "lat": 1.353055,
+        "lng": 103.947127
+      },
+      "days": ["Tue", "Thu", "Sat"],
+      "times": ["9:00 AM - 6:00 PM"],
+      "imgDetail": { "src": "drop-off/map3.png", "alt": "Third Location Map" }
+    },
+    {
+      "name": "Ang Mo Kio",
+      "region": "Central",
+      "address": "700A Ang Mo Kio Ave 3, Singapore 560700",
+      "latLng": {
+        "lat": 1.36986,
+        "lng": 103.846178
+      },
+      "days": ["Tue", "Thu", "Sat"],
+      "times": ["9:00 AM - 6:00 PM"],
+      "imgDetail": { "src": "drop-off/map4.png", "alt": "Fourth Location Map" }
+    },
+    {
+      "name": "Redhill",
+      "region": "Central",
+      "address": "85 Redhill Ln, Singapore 150085",
+      "latLng": {
+        "lat": 1.287356,
+        "lng": 103.818318
+      },
+      "days": ["Tue", "Thu", "Sat"],
+      "times": ["9:00 AM - 6:00 PM"],
+      "imgDetail": { "src": "drop-off/map5.png", "alt": "Fifth Location Map" }
+    },
+    {
+      "name": "Lakeside",
+      "region": "West",
+      "address": "517B Jurong West Street 52, Singapore 642517",
+      "latLng": {
+        "lat": 1.345138,
+        "lng": 103.720682
+      },
+      "days": ["Mon", "Thu"],
+      "times": ["9:00 AM - 6:00 PM"],
+      "imgDetail": { "src": "drop-off/map6.png", "alt": "Sixth Location Map" }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+@apply "tailwindcss";
+@reference "@/index.css";
+
+.container {
+  @apply h-[75vh] justify-center items-center;
+}
+
+.popupContainer {
+  @apply flex flex-col w-50 gap-3;
+}
+
+.popupContainer p {
+  @apply m-0;
+}
+
+.popupTitle {
+  @apply font-bold text-base;
+}
+
+.statusOpen {
+  @apply text-primary;
+}
+
+.statusClosed {
+  @apply text-red-600;
+}
+
+.statusMsg {
+  @apply text-gray-400;
+}

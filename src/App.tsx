@@ -5,9 +5,8 @@ import Welcome from "./pages/Welcome";
 import Contact from "./pages/Contact";
 import Auth from "./pages/auth/Auth";
 import BookNow from "./pages/BookNow";
-import Rates from "./pages/Rates.tsx";
+import Rates from "./pages/Rates";
 import Schedule from "./pages/Schedule";
-
 import { UserContextProvider } from "./context/user-context";
 import TermsAndPrivacy from "./pages/TermsAndPrivacy";
 import PageNotFound from "./pages/PageNotFound";
