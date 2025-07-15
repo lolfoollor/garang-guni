@@ -22,20 +22,20 @@ export const UiContext = createContext<UiContextType>(initialUiContextState);
 
 export function UiContextProvider({ children }: { children: ReactNode }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isUserMenuOpen, setisUserMenuOpen] = useState(false);
+  const [isUserMenuOpen, setUserMenuOpen] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const toggleNav = () => {
     setIsNavOpen((prevNavState) => {
       if (!prevNavState) {
-        setisUserMenuOpen(false);
+        setUserMenuOpen(false);
       }
       return !prevNavState;
     });
   };
 
   const toggleUserMenu = () => {
-    setisUserMenuOpen((prevUserMenuState) => {
+    setUserMenuOpen((prevUserMenuState) => {
       if (!prevUserMenuState) {
         setIsNavOpen(false);
       }

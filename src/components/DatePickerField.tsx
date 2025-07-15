@@ -39,7 +39,7 @@ const DatePickerField = ({
               error ? styles.datePickerError : ""
             }`}
             dateFormat="dd/MM/yyyy"
-            calendarIconClassName={styles.calandarIcon}
+            calendarIconClassName={styles.calendarIcon}
             popperPlacement="bottom-start"
             popperClassName={styles.popper}
             popperContainer={({ children }) =>

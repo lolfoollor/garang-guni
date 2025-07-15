@@ -23,7 +23,7 @@ const ContactInquiry = ({ isDark }: ContactInquiryProps) => {
       <div className={styles.inquiryButtonContainer}>
         <Button
           label={msg.contactInquiry.buttonText}
-          className={`${styles.inquiryButton} ${isDark && styles.dark}`}
+          className={`${styles.inquiryButton} ${isDark ? styles.dark : ""}`}
           onClick={toggleInquiryForm}
         />
       </div>

@@ -11,9 +11,13 @@ export const clearBookingDraft = createAppAsyncThunk(
   "bookingDraft/clearBookingDraft",
   async (_, thunkAPI) => {
     const images = selectBookingImages(thunkAPI.getState());
-    images?.forEach(async (image: Image) => {
-      await deleteImage(image.id);
-    });
+    if (images) {
+      await Promise.all(
+        images.map(async (image: Image) => {
+          await deleteImage(image.id);
+        }),
+      );
+    }
     thunkAPI.dispatch(resetBookingDraft());
   },
 );
