@@ -1,4 +1,5 @@
 /// <reference types="redux-persist" />
+/// <reference types="vite/client" />
 
 declare module "*.module.css" {
   const classes: { [key: string]: string };

@@ -1,3 +1,8 @@
-export function getImageUrl(url: string) {
-  return new URL(`${`../assets/${url}`}`, import.meta.url).href;
+const images = import.meta.glob("../assets/**/*", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
+export function getImageUrl(url: string): string | undefined {
+  return images[`../assets/${url}`];
 }
