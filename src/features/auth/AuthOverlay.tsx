@@ -25,14 +25,14 @@ const AuthOverlay = ({
         <AuthSidePanel
           title={msg.overlay.signIn.title}
           description={msg.overlay.signIn.description}
-          buttonLabel={msg.overlay.signIn.butonLabel}
+          buttonLabel={msg.overlay.signIn.buttonLabel}
           onClick={() => setCreatingAccount(false)}
           isActive={isCreatingAccount}
         />
         <AuthSidePanel
           title={msg.overlay.register.title}
           description={msg.overlay.register.description}
-          buttonLabel={msg.overlay.register.butonLabel}
+          buttonLabel={msg.overlay.register.buttonLabel}
           onClick={() => setCreatingAccount(true)}
           isLeftSide={false}
           isActive={!isCreatingAccount}

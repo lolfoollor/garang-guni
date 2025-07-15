@@ -28,11 +28,12 @@
         "format": "Invalid email! Please enter a valid Email address."
       },
       "subject": {
-        "required": "Please enter a subject."
+        "required": "Please enter a subject.",
+        "max": "Subject cannot exceed 100 characters."
       },
       "messageBody": {
         "required": "Please enter a message.",
-        "max": "Name cannot exceed 100 characters."
+        "max": "Message cannot exceed 500 characters."
       },
       "contact": {
         "or": "Please enter at least a phone number or email."

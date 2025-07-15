@@ -3,13 +3,12 @@ import ImageGrid from "@/components/ImageGrid";
 import Button from "@/components/Button";
 import { clearBookingDraft } from "./bookingDraftSlice";
 import BookingFormBanner from "./components/BookingFormBanner";
-import BookingReviewCalandar from "./components/booking-review/BookingReviewCalandar";
+import BookingReviewCalendar from "./components/booking-review/BookingReviewCalendar";
 import styles from "./BookingReviewForm.module.css";
 import BookingReviewRow from "./components/booking-review/BookingReviewRow";
 import { Image } from "@/components/Image";
 import { createBookingFormData } from "@/utils/bookingUtils";
 import { BookingSchema } from "./schema";
-import backEnd from "@/api/back-end-api";
 import msg from "@/locales/en/bookings/bookingReviewForm.json";
 
 interface BookingReviewFormProps {
@@ -42,7 +41,7 @@ const BookingReviewForm = ({
         <BookingFormBanner bannerText="Review Booking" />
       </div>
       <div className={styles.bookingContentContainer}>
-        <BookingReviewCalandar dateInIso={draft.date!} />
+        <BookingReviewCalendar dateInIso={draft.date!} />
         <BookingReviewRow
           category={msg.reviewItems.pickupTime}
           values={draft.preferredTiming}

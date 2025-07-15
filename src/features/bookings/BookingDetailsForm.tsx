@@ -97,7 +97,11 @@ const BookingDetailsForm = ({
           error={errors.categories?.message}
         />
         <BookingPictures name="images" control={control} />
-        <BookingRemarks name="remarks" control={control} />
+        <BookingRemarks
+          name="remarks"
+          control={control}
+          error={errors.remarks}
+        />
         <div className={styles.submitBtnContainer}>
           <Button label={msg.buttonNextLabel} className={styles.submitBtn} />
         </div>

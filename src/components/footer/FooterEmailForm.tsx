@@ -8,12 +8,12 @@ import { interpolateMessage } from "@/utils/textUtils";
 const EMAIL_TO_UNSUBSCRIBE = "test@test.test";
 
 const FooterEmailForm = () => {
-  const [email, setEmail] = useState<string>(formMsgs.form.email.empty);
-  const [errorMsg, setErrorMsg] = useState<string>(formMsgs.form.email.empty);
+  const [email, setEmail] = useState<string>("");
+  const [errorMsg, setErrorMsg] = useState<string>("");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setErrorMsg(formMsgs.form.email.empty);
-    if (e.target.value === formMsgs.form.email.empty) {
+    setErrorMsg("");
+    if (e.target.value === "") {
       setErrorMsg(formMsgs.form.email.required);
     } else if (!validateEmail(e.target.value)) {
       setErrorMsg(formMsgs.form.email.invalid);
@@ -26,12 +26,12 @@ const FooterEmailForm = () => {
     e.preventDefault();
     if (errorMsg) return;
 
-    if (email === formMsgs.form.email.empty) {
+    if (email === "") {
       alert(formMsgs.form.email.alert_empty);
       return;
     }
 
-    setEmail(formMsgs.form.email.empty);
+    setEmail("");
     alert(
       interpolateMessage(formMsgs.form.email.alert_success, {
         email: EMAIL_TO_UNSUBSCRIBE,
@@ -58,6 +58,7 @@ const FooterEmailForm = () => {
         <Button
           label={formMsgs.form.email.subscribe}
           className={styles.formSubmitButton}
+          type="submit"
         />
       </div>
       {errorMsg && <p className={styles.formErrorMsg}>{errorMsg}</p>}

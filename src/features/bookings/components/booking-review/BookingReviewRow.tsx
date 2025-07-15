@@ -12,7 +12,7 @@ const BookingReviewRow = ({ category, values }: BookingReviewRowProps) => {
   const isEmptyArr = Array.isArray(values) && values.length === 0;
 
   if (isUndefined || isEmptyStr || isEmptyArr) {
-    return;
+    return null;
   }
 
   const isList = typeof values !== "string";

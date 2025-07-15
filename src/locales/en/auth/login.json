@@ -1,7 +1,7 @@
 {
   "form": {
     "header": "Sign In",
-    "forgetPassword": "Forget Password?",
+    "forgetPassword": "Forgot Password?",
     "placeholders": {
       "email": "Enter your email",
       "password": "Enter your password"
@@ -11,7 +11,7 @@
       "default": "Something went wrong. Please try again later."
     },
     "footer": {
-      "text": "Dont have an account?",
+      "text": "Don't have an account?",
       "btnLabel": "Sign Up"
     }
   }

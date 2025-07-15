@@ -57,7 +57,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
       query: ({ email }: ForgotPasswordInputs) => ({
         url: RESET_PASSWORD_API_URL,
         method: "POST",
-        body: email,
+        body: { email },
       }),
     }),
   }),

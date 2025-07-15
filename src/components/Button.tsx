@@ -36,7 +36,7 @@ function Button({
       onClick={onClick}
       {...buttonProps}
     >
-      <p style={textStyle}>{label}</p>
+      <span style={textStyle}>{label}</span>
     </button>
   );
 }

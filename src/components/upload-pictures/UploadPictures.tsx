@@ -117,9 +117,9 @@ function UploadPictures({
           </button>
         )}
         <aside className={styles.statusMsgContainer}>
-          <ul className={`${statusMessage?.isError && styles.error}`}>
+          <p className={`${statusMessage?.isError && styles.error}`}>
             {statusMessage?.message}
-          </ul>
+          </p>
         </aside>
       </div>
     </div>

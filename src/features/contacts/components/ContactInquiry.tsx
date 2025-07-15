@@ -20,10 +20,10 @@ const ContactInquiry = ({ isDark }: ContactInquiryProps) => {
     <div className={styles.inquiryBox}>
       <p className={styles.inquiryHeader}>{msg.contactInquiry.header}</p>
       <div className={styles.inquiryText}>{msg.contactInquiry.body}</div>
-      <div className={styles.inquryButtonContainer}>
+      <div className={styles.inquiryButtonContainer}>
         <Button
           label={msg.contactInquiry.buttonText}
-          className={`${styles.inquryButton} ${isDark && styles.dark}`}
+          className={`${styles.inquiryButton} ${isDark && styles.dark}`}
           onClick={toggleInquiryForm}
         />
       </div>

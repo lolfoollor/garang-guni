@@ -13,11 +13,11 @@
   @apply flex py-2.5 text-sm md:text-base xl:text-lg;
 }
 
-.inquryButtonContainer {
+.inquiryButtonContainer {
   @apply py-2.5;
 }
 
-.inquryButton {
+.inquiryButton {
   @apply rounded-md px-4 py-2 text-white bg-primary duration-200
     text-base font-medium cursor-pointer transition-colors hover:bg-primary-700
     active:bg-primary-800;

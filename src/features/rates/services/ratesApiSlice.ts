@@ -33,7 +33,7 @@ export const rateApiSlice = apiSlice.injectEndpoints({
         ),
       ],
     }),
-    getRate: builder.query<Rate[], string>({
+    getRate: builder.query<Rate, string>({
       query: (rateId) => `${RATE_API_URL}/${rateId}`,
       providesTags: (_result, _error, arg) => [
         { type: TagTypes.RateTag, id: arg },

@@ -12,7 +12,7 @@ import { apiSlice } from "@/app/api/apiSlice";
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: [],
+  blacklist: [apiSlice.reducerPath],
 };
 
 const rootReducer = combineReducers({

@@ -15,7 +15,9 @@ enum BookingFormPage {
 }
 
 const BookNowForm = ({ handleClick }: BookNowFormProps) => {
-  const [page, setPage] = useState<number>(BookingFormPage.InitialDetailsPage);
+  const [page, setPage] = useState<BookingFormPage>(
+    BookingFormPage.InitialDetailsPage,
+  );
 
   const handleNextPageClick = () => {
     setPage((prevPage) => (prevPage + 1) as BookingFormPage);
