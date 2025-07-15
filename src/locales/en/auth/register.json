@@ -1,0 +1,19 @@
+{
+  "form": {
+    "header": "Create Account",
+    "placeholders": {
+      "username": "Enter your username",
+      "email": "Enter your email",
+      "password": "Enter your password",
+      "confirmPassword": "Reenter your password"
+    },
+    "submitButtonLabel": "Register",
+    "error": {
+      "default": "Something went wrong. Please try again later."
+    },
+    "footer": {
+      "text": "Have an Account?",
+      "btnLabel": "Login"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "form": {
+    "header": "Sign In",
+    "forgetPassword": "Forget Password?",
+    "placeholders": {
+      "email": "Enter your email",
+      "password": "Enter your password"
+    },
+    "submitButtonLabel": "Sign In",
+    "error": {
+      "default": "Something went wrong. Please try again later."
+    },
+    "footer": {
+      "text": "Dont have an account?",
+      "btnLabel": "Sign Up"
+    }
+  }
+}
