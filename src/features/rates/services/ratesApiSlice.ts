@@ -1,5 +1,5 @@
-import { RATE_API_URL } from "@/features/api/apiRoutes";
-import { apiSlice, TagTypes } from "@/features/api/apiSlice";
+import { RATE_API_URL } from "@/app/api/apiRoutes";
+import { apiSlice, TagTypes } from "@/app/api/apiSlice";
 
 export type Rate = {
   rateId: string;

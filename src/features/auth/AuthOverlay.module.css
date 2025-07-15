@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.overlayContainer {
+  @apply hidden absolute md:block left-1/2 w-1/2 h-full overflow-hidden z-3
+    transition-transform duration-600 ease-in-out;
+}
+
+.overlay {
+  @apply bg-primary text-white relative w-2/1 -left-full h-full 
+    translate-x-0 transition-transform duration-600 ease-in-out;
+}
+
+.moveLeft {
+  @apply -translate-x-full;
+}
+
+.defaultPos {
+  @apply translate-x-1/2;
+}

@@ -1,22 +1,29 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./UserMenu.module.css";
-import { UserContext } from "../../context/user-context.tsx";
 import { UiContext } from "../../context/ui-context.tsx";
+import { useLogoutMutation } from "@/features/auth/services/authApiSlice.ts";
+import { ROUTES } from "@/constants/routes.ts";
 
 const USER_MENU_ITEMS = [
-  { to: "/profile", icon: "fa-solid fa-address-card", label: "Profile" },
+  { to: ROUTES.PROFILE, icon: "fa-solid fa-address-card", label: "Profile" },
   {
-    to: "/manage",
+    to: ROUTES.MANAGE,
     icon: "fa-regular fa-calendar-check ",
     label: "Manage Booking",
   },
-  { to: "/setting", icon: "fa-solid fa-gear ", label: "Setting" },
+  { to: ROUTES.SETTING, icon: "fa-solid fa-gear ", label: "Setting" },
 ];
 
 function UserMenu() {
-  const { handleLogout } = useContext(UserContext);
   const { isUserMenuOpen: isOpen, toggleUserMenu } = useContext(UiContext);
+  const [logout] = useLogoutMutation();
+  const handleLogout = async () => {
+    await logout()
+      .unwrap()
+      .catch(() => {});
+    toggleUserMenu();
+  };
 
   return (
     <div className={`${styles.userMenu} ${isOpen ? styles.userMenuOpen : ""}`}>

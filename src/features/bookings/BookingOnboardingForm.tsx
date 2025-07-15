@@ -6,12 +6,12 @@ import styles from "./BookingOnboardingForm.module.css";
 import { TextField } from "@mui/material";
 import DatePickerField from "../../components/DatePickerField";
 import { useNavigate } from "react-router-dom";
-import { useContext, useEffect } from "react";
-import { UserContext } from "../../context/user-context";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setDraft } from "./bookingDraftSlice";
 import msg from "@/locales/en/bookings/components/bookingOnboarding.json";
 import { ROUTES } from "@/constants/routes";
+import { selectCurrentToken } from "../auth/authSlice";
 
 const bookingOnboardingSchema = bookingSchema.pick({
   date: true,
@@ -50,7 +50,7 @@ const BookingOnboardingForm = ({
   }, [draft.date, draft.address, reset]);
 
   const dispatch = useAppDispatch();
-  const { isLoggedIn } = useContext(UserContext);
+  const isLoggedIn = !!useAppSelector(selectCurrentToken);
   const navigate = useNavigate();
 
   const onSubmit = (data: BookingOnboardingSchema) => {

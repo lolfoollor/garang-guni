@@ -3,18 +3,24 @@ import styles from "./HeaderUserSection.module.css";
 import UserMenu from "./UserMenu";
 import { useContext } from "react";
 import { UiContext } from "../../context/ui-context";
-import { UserContext } from "../../context/user-context";
+import { ROUTES } from "@/constants/routes";
+import { useAppSelector } from "@/app/hooks";
+import {
+  selectCurrentToken,
+  selectCurrentUser,
+} from "@/features/auth/authSlice";
 
 const HeaderUserSection = () => {
-  const { isLoggedIn, credentials } = useContext(UserContext);
   const { isUserMenuOpen, toggleUserMenu } = useContext(UiContext);
   const navigate = useNavigate();
+  const isLoggedIn = !!useAppSelector(selectCurrentToken);
+  const userDetails = useAppSelector(selectCurrentUser);
 
   const handleUserIconClick = () => {
     if (isLoggedIn) {
       toggleUserMenu();
     } else {
-      navigate("/auth");
+      navigate(ROUTES.AUTH);
     }
   };
 
@@ -24,11 +30,10 @@ const HeaderUserSection = () => {
         {isLoggedIn ? (
           <p>
             <span className={styles.hello}> Hello</span>,{" "}
-            {credentials.firstName && credentials.firstName}
-            {credentials.lastname && credentials.lastname}
+            {userDetails?.username && userDetails.username}
           </p>
         ) : (
-          <NavLink to="/auth">Login</NavLink>
+          <NavLink to={ROUTES.AUTH}>Login</NavLink>
         )}
       </div>
       <div className={styles.usernameIconContainer}>

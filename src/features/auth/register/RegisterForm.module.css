@@ -1,32 +1,37 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
 .registerForm {
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 50px;
-  height: 100%;
-  text-align: center;
+  @apply flex flex-col items-center justify-center px-12 py-6 min-h-full h-fit 
+    w-full text-center gap-4 !text-sm;
 }
 
-.helperText {
-  line-height: unset !important;
-  margin: 4px 10px 0 !important;
-  font-size: 0.7rem !important;
+.registerIcon {
+  @apply !bg-primary;
 }
 
-/* .registerBtn:active {
-  transform: scale(0.95);
+.inputContainer {
+  @apply flex flex-col gap-1 w-full;
 }
 
-.registerBtn:focus {
-  outline: none;
-} */
-
-/* Responsive styles
-@media (max-width: 576px) {
-  .registerBtn {
-    padding: 10px 30px;
-  }
+.registerHeaderContainer {
+  @apply flex flex-col font-bold text-2xl items-center;
 }
-*/
+
+.registerBtn {
+  @apply rounded-md text-white text-xs font-bold py-4 w-full uppercase 
+    ease-in cursor-pointer bg-primary hover:bg-primary-700 
+    active:bg-primary-800;
+}
+
+.switchContainer {
+  @apply md:hidden;
+}
+
+.switchText {
+  @apply flex font-semibold gap-1;
+}
+
+.switchBtn {
+  @apply text-primary font-bold hover:text-primary-700 active:text-primary-800;
+}
