@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.formsWrapper {
+  @apply flex relative w-full h-full items-center bg-white overflow-y-auto;
+}
+
+.form {
+  @apply flex h-full w-full transition duration-600 ease-in-out
+    md:w-1/2 md:absolute;
+}
+
+.loginHidden {
+  @apply hidden md:block opacity-0 md:translate-x-full z-0;
+}
+
+.loginVisible {
+  @apply opacity-100 left-0 z-1;
+}
+
+.registerHidden {
+  @apply hidden md:block opacity-0 left-0 z-0;
+}
+
+.registerVisible {
+  @apply opacity-100 md:translate-x-full z-1;
+}

@@ -1,99 +1,30 @@
-.containerCol {
-  background-color: white;
-  height:calc(100vh - 200px);
-  display: flex;
-  flex-direction: column;
+@import "tailwindcss";
+@reference "@/index.css";
+
+.contact {
+  @apply flex min-h-[50vh] xs:min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] w-full 
+    bg-white justify-center bg-linear-to-r from-[#28C995] to-[#25AED6];
 }
 
 .dark {
-  background-color: rgba(12, 17, 75, 1);
-  color:white;
+  @apply bg-linear-to-b from-10% from-[#0C114B] to-[#1F2DC5] to-50% 
+    text-white;
 }
 
-.containerCol h1 {
-  font-size: 3rem;
-  align-self: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
+.contactContainer {
+  @apply flex flex-col items-center w-full h-full;
 }
 
-.contactUsBanner {
-  display: flex;
-  background-image: linear-gradient(to right,rgba(40,201,149,1),rgba(37,174,214,1));
-  width: 100%;
-  height: 40vh;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  align-items: center;
+.contactSectionContainer {
+  @apply flex flex-col w-full h-full sm:flex-row xl:pb-4;
 }
 
-.dark .contactUsBanner {
-  background-image: linear-gradient(rgba(12,17,75,1),rgba(31,45,197,1));
+.contactSection {
+  @apply even:bg-gray-300 odd:bg-white w-full sm:w-1/3 h-full py-4 px-4 
+    sm:px-8 sm:first:rounded-tl-md sm:last:rounded-tr-md
+    xl:first:rounded-l-md xl:last:rounded-r-md;
 }
 
-.contactUsBannerContent {
-  background-repeat: no-repeat;
-  height: 40vh;
-  margin: auto;
-}
-
-.container {
-  display: flex;
-}
-
-.container h2{
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.meetUs {
-  display: flex;
-  flex-direction: column;
-  padding: 10px 30px;
-  width: 50%;
-  height: 40vh;
-}
-
-.meetUs p {
-  margin: 0px;
-}
-
-.dark .meetUs {
-  background-color: rgba(0,0,0,1);
-}
-
-.inquiryBox {
-  background-color:rgba(0, 0, 0, 0.1);
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  padding: 10px 30px;
-}
-
-.dark .inquiryBox {
-  background-color: rgba(17,20,37,1);
-}
-
-.inquryButton {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  width: fit-content;
-}
-
-.inquryButton:hover {
-  color: blue;
-}
-
-.inquryButton:active {
-  color: red;
-}
-
-.inquryButton:focus {
-  outline: none;
+.dark .contactSection {
+  @apply even:bg-[#111425] odd:bg-black;
 }

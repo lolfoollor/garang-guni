@@ -1,0 +1,13 @@
+{
+  "dropzone": {
+    "default": "Drag & Drop files here\nor",
+    "dragged": "Release to drop the files here",
+    "browse": "Browse Files",
+    "errorUpload": "❌ Error: Upload failed. ({{errorMsg}})",
+    "errorReasonDefault": "File rejected",
+    "errorFileRejected": "❌ Error: {{reason}} ({{fileName}})",
+    "errorUnknown": "Unknown error",
+    "successUpload": "Added {{fileName}} - {{fileSize}}b",
+    "buttonText": "Browse Files"
+  }
+}

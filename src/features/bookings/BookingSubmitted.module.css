@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.bookingSubmittedContainer {
+  @apply flex flex-col px-8 xs:px-10 gap-3 mb-2 h-70 justify-evenly
+    max-w-xs !overflow-y-visible;
+}
+
+.checkMark {
+  @apply h-24 w-24 left-0 right-0 -top-12 text-center mx-auto my-0 absolute
+    text-primary text-8xl bg-white rounded-full;
+}
+
+.title {
+  @apply text-center text-2xl mt-8 -mb-4;
+}
+
+.body {
+  @apply text-center;
+}
+
+.submitBtn {
+  @apply rounded-md text-white px-2 xs:px-4 py-2 w-full transition-colors
+    duration-200 bg-primary hover:bg-primary-700 active:bg-primary-800;
+}

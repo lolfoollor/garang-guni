@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.banner {
+  @apply flex h-14 bg-[#fff8e1] md:h-20 sm:h-18 xs:h-16;
+}
+
+.bannerText {
+  @apply flex ml-5 text-xl font-semibold px-5 bg-white w-40
+    md:text-4xl sm:text-3xl xs:text-2xl md:w-55 sm:w-45 xs:w-40 xs:ml-15;
+}
+
+.companyLogoAndText {
+  @apply hidden sm:flex min-w-1/2 md:min-w-5/12 h-full justify-center px-2 items-center gap-2;
+}
+
+.companyIcon {
+  @apply h-full;
+}

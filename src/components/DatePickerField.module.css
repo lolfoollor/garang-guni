@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.datePickerError {
+  @apply placeholder-red-500;
+}
+
+.calendarIcon {
+  @apply !p-0 !px-1 h-full;
+}
+
+.popper {
+  @apply z-[1500];
+}

@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.visitUsContainer {
+  @apply flex flex-col w-full h-full;
+}
+
+.visitUsHeader {
+  @apply flex font-bold text-xl md:text-2xl self-center sm:self-auto;
+}
+
+.mapContainer {
+  @apply flex pt-5;
+}
+
+.map {
+  @apply grow aspect-square z-1;
+}
+
+.warning {
+  @apply flex text-xs justify-end mt-auto text-right;
+}

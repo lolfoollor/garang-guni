@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.navBarHeader {
+  @apply text-xl font-bold text-black px-6 py-3 border-b bg-primary-600;
+}

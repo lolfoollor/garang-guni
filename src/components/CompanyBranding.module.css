@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.companyBrandingContainer {
+  @apply flex flex-col gap-2;
+}
+
+.companyFakeLogo {
+  @apply w-8 h-8 bg-primary rounded-full;
+}
+
+.companySloganText {
+  @apply flex flex-col text-sm;
+}
+
+.companySloganBold {
+  @apply font-bold;
+}

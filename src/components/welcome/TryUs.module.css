@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.tryUsContainer {
+  @apply flex flex-col items-center;
+}
+
+.link {
+  @apply font-bold hover:text-primary active:text-primary-700;
+}

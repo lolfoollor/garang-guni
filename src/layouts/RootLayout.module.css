@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.mainContainer {
+  @apply flex flex-col items-center;
+}
+
+.outletContainer {
+  @apply flex justify-center w-full;
+}

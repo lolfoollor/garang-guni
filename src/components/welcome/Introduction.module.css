@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.introductionContainer {
+  @apply flex flex-col items-center;
+}
+
+.introPhoto {
+  @apply h-40 xs:h-60 sm:h-90 lg:h-120;
+}
+
+.introduction {
+  @apply flex flex-col my-4 gap-4;
+}
+
+.catchphrase {
+  @apply hover:animate-[shake_0.5s_ease-in-out_infinite] hover:text-primary;
+}
+
+/* 
+  While Tailwind offers @theme {----animate-shake: ...; @keyframes} it just
+  didnt work for this .module.css as it refuses to acknowledge shake keyframes.
+*/
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

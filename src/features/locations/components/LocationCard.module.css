@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.locationCard {
+  @apply bg-white rounded-lg p-4 w-60 min-h-72 text-left text-xs
+    md:w-80 md:min-h-92 md:text-sm;
+}
+
+.regionTagContainer {
+  @apply flex -ml-1 w-fit bg-primary px-3 py-1 rounded-md;
+}
+
+.regionTag {
+  @apply text-white font-bold;
+}
+
+.locationName {
+  @apply text-lg font-bold;
+}
+
+.imgContainer {
+  @apply flex p-2 px-6;
+}
+
+.mapImage {
+  @apply w-full aspect-[4/3] object-cover;
+}
+
+.detailsText {
+  @apply mb-1;
+}

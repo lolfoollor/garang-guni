@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.username {
+  @apply h-full w-fit size-1.5 hidden text-gray-800 whitespace-nowrap 
+      items-center xs:flex xs:text-sm sm:text-2xl;
+}
+
+.hello {
+  @apply font-bold;
+}
+
+.usernameIconContainer {
+  @apply relative;
+}
+
+.usernameIcon {
+  @apply cursor-pointer;
+}

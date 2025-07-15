@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.contentContainer {
+  @apply flex justify-center h-[80vh] w-full;
+}
+
+.container {
+  @apply flex m-auto justify-center items-center relative 
+   w-95 max-w-[80vw] min-h-125 max-h-[75vh] h-auto md:w-3xl;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}

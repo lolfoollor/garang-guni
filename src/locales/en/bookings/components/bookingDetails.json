@@ -1,0 +1,18 @@
+{
+  "bookingPictures": {
+    "defaultHeader": "Your Images:"
+  },
+  "bookingPicturesComponent": {
+    "maxLimitReached": {
+      "header": "Maximum Photo Limit Reached",
+      "body": "You can upload up to {{amount}} photos. Please submit another booking request if you have more than {{amount}} items."
+    },
+    "deleteConfirmation": {
+      "header": "Confirm Deletion",
+      "body": "Are you sure you want to delete this picture?"
+    }
+  },
+  "bookingRemarks": {
+    "defaultHeader": "Remarks:"
+  }
+}

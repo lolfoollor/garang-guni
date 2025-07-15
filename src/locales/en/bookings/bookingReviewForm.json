@@ -1,0 +1,14 @@
+{
+  "banner": "Review Booking",
+  "reviewItems": {
+    "address": "Address:",
+    "pickupTime": "Pickup Time:",
+    "recyclableItems": "Items to Recycle:",
+    "remarks": "Remarks:",
+    "images": "Uploaded Images:"
+  },
+  "buttons": {
+    "previous": "Previous Step",
+    "submit": "Submit"
+  }
+}

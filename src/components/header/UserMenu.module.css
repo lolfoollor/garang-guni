@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.userMenu {
+  @apply flex flex-col opacity-0 absolute right-0 top-full mt-2 rounded-lg bg-white transition-opacity duration-100 w-44;
+}
+
+.userMenuOpen {
+  @apply opacity-100;
+}
+
+.userMenuContainer {
+  @apply flex gap-2 px-4 py-3 items-center cursor-pointer hover:opacity-70 hover:bg-primary-300 transition-colors rounded-lg duration-200;
+}
+
+.button {
+  @apply text-base font-medium cursor-pointer transition-colors duration-250 py-2 hover:text-blue-500 active:text-red-600;
+}

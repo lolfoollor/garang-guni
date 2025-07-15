@@ -1,0 +1,10 @@
+// export const BASE_API_URL = "https://6698c57b2069c438cd6feb5e.mockapi.io";
+export const BASE_API_URL = "https://localhost:5000/";
+const AUTH_API_URL = "/auth";
+export const LOGIN_API_URL = `${AUTH_API_URL}/login`;
+export const REGISTER_API_URL = `${AUTH_API_URL}/register`;
+export const LOGOUT_API_URL = `${AUTH_API_URL}/logout`;
+export const REFRESH_API_URL = `${AUTH_API_URL}/refresh`;
+export const RESET_PASSWORD_API_URL = `${AUTH_API_URL}/reset-password`;
+export const ME_API_URL = "/users/me";
+export const RATE_API_URL = "/items";

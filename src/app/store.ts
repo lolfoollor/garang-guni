@@ -1,0 +1,60 @@
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import storage from "redux-persist/lib/storage";
+import bookingDraftReducer, {
+  setDraft,
+} from "@/features/bookings/bookingDraftSlice";
+import authReducer from "@/features/auth/authSlice";
+import { persistReducer, persistStore } from "redux-persist";
+import { loadImageBlob } from "./db";
+import { Image } from "@/components/Image";
+import { apiSlice } from "@/app/api/apiSlice";
+
+const persistConfig = {
+  key: "root",
+  storage,
+  blacklist: [apiSlice.reducerPath],
+};
+
+const rootReducer = combineReducers({
+  auth: authReducer,
+  bookingDraft: bookingDraftReducer,
+  [apiSlice.reducerPath]: apiSlice.reducer,
+});
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(apiSlice.middleware),
+});
+
+const refreshImageBlobs = async () => {
+  const images = store.getState().bookingDraft.images;
+  if (!images || images.length <= 0) {
+    return;
+  }
+
+  const updatedImgs = await Promise.all(
+    images.map(async (image: Image) => {
+      const updatedImgBlob = await loadImageBlob(image.id);
+      return { id: image.id, src: updatedImgBlob };
+    }),
+  );
+
+  store.dispatch(setDraft({ images: updatedImgs }));
+};
+
+export const persistor = persistStore(store);
+persistor.subscribe(async () => {
+  const { bootstrapped } = persistor.getState();
+  if (bootstrapped) {
+    await refreshImageBlobs();
+  }
+});
+
+export type AppStore = typeof store;
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof rootReducer>;

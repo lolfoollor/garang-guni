@@ -1,0 +1,12 @@
+{
+  "schema": {
+    "required": {
+      "date": "Date is required",
+      "address": "Address is required",
+      "preferredTiming": "Preferred timing is required"
+    },
+    "validation": {
+      "remarks": "Remarks cannot exceed 500 characters."
+    }
+  }
+}

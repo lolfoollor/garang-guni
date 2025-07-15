@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.footerEmailHeaderContainer {
+  @apply flex flex-row text-lg font-semibold md:flex-col flex-wrap;
+}
+
+.footerEmailHeaderHighlightMsg {
+  @apply font-bold text-green-600;
+}

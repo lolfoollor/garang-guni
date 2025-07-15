@@ -1,19 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@theme {
+  --color-primary: #00c26f;
+  --color-primary-50: #eefff6;
+  --color-primary-100: #d7ffed;
+  --color-primary-200: #b2ffdd;
+  --color-primary-300: #76ffc3;
+  --color-primary-400: #33f5a1;
+  --color-primary-500: #09de82;
+  --color-primary-600: #00c26f;
+  --color-primary-700: #049156;
+  --color-primary-800: #0a7146;
+  --color-primary-900: #0a5d3c;
+  --color-primary-950: #003420;
+  --color-primaryDark: #00ac62;
+  --color-primaryDark-50: #eefff6;
+  --color-primaryDark-100: #d7ffed;
+  --color-primaryDark-200: #b2ffdc;
+  --color-primaryDark-300: #76ffc3;
+  --color-primaryDark-400: #33f5a1;
+  --color-primaryDark-500: #09de82;
+  --color-primaryDark-600: #00ac62;
+  --color-primaryDark-700: #049155;
+  --color-primaryDark-800: #0a7146;
+  --color-primaryDark-900: #0a5d3c;
+  --color-primaryDark-950: #00341f;
+  --color-primaryLightTransparent: #00c26f4d;
+  --color-primary70Opacity: #00c26fb3;
+  --color-primary50Opacity: #00c26f80;
+  --color-primary20Opacity: #00c26f33;
+  --color-dark-50: #f6f6f6;
+  --color-dark-100: #e7e7e7;
+  --color-dark-200: #d1d1d1;
+  --color-dark-300: #b0b0b0;
+  --color-dark-400: #888888;
+  --color-dark-500: #6d6d6d;
+  --color-dark-600: #5d5d5d;
+  --color-dark-700: #4f4f4f;
+  --color-dark-800: #454545;
+  --color-dark-900: #3d3d3d;
+  --color-dark-950: #121212;
+  --color-darklight: #1e1e1e;
+  --color-gray: #424242;
+  --color-softGray: #f2f2f2;
+  --color-text: #494949;
+  --color-textLight: #7c7c7c;
+  --color-textDark: #1d1d1d;
+  --color-rose: #ef4444;
+  --color-roseLight: #fb7171;
+  --color-whiteGreen: #e6ffe6;
+  --color-tabLightColor: #ffffff;
+  --color-lightGreen: #90ee90;
+  --color-bookingPurple: #6016bb;
+  --color-bookingPurple-hover: #7e34d9;
+  --color-bookingPurple-onPress: #42029d;
+  --color-lightGray: #00000066;
+  --breakpoint-xs: 25rem;
+  --font-roboto: "Roboto", sans-serif;
 }
 
-body {
-  font-family: 'Rubik', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #333;
-  background: #fafafa;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
+@layer base {
+  #root {
+    @apply min-h-screen w-screen overflow-x-hidden;
+  }
+
+  body {
+    @apply flex justify-center h-screen font-sans text-sm font-normal leading-6 text-[#333] bg-[#fafafa];
+  }
+}
+
+.appContainer {
+  @apply flex flex-col min-h-screen w-full;
+}
+
+.app {
+  @apply min-w-full h-full;
 }

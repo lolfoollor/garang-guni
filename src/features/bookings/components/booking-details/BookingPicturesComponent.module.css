@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.bookingPictures {
+  @apply flex flex-col gap-2;
+}

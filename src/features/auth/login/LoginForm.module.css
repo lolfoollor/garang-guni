@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.loginForm {
+  @apply flex flex-col items-center justify-center px-12 py-6 min-h-full h-fit 
+    w-full text-center gap-4 !text-sm;
+}
+
+.lockIcon {
+  @apply !bg-primary;
+}
+
+.inputContainer {
+  @apply flex flex-col gap-1 w-full;
+}
+
+.loginHeaderContainer {
+  @apply flex flex-col font-bold text-2xl items-center;
+}
+
+.forgetPasswordContainer {
+  @apply flex justify-end;
+}
+
+.forgetPassword {
+  @apply cursor-pointer transition-transform hover:scale-95 active:text-primary;
+}
+
+.signInBtn {
+  @apply rounded-md text-white text-xs font-bold py-4 w-full uppercase 
+    ease-in cursor-pointer bg-primary hover:bg-primary-700 
+    active:bg-primary-800;
+}
+
+.switchContainer {
+  @apply md:hidden;
+}
+
+.switchText {
+  @apply flex font-semibold gap-1;
+}
+
+.switchBtn {
+  @apply text-primary font-bold hover:text-primary-700 active:text-primary-800;
+}

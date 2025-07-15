@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.logo {
+  @apply font-medium text-2xl;
+}
+  
+.logoSpan {
+  @apply text-green-600 font-bold;
+}

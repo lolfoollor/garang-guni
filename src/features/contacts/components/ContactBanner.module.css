@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.contactUsBanner {
+  @apply flex h-1/2 w-full items-center;
+}
+
+.contactUsBannerContent {
+  @apply m-auto object-cover;
+}

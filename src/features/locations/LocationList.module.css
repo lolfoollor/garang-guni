@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.locationList {
+  @apply flex flex-wrap gap-4 justify-center;
+}
+
+.clickableLocation {
+  @apply rounded-lg shadow-md shadow-gray-400 
+    hover:border-4 hover:border-primary 
+    active:border-4 active:border-primary-700;
+}
+
+.dialogContent {
+  @apply w-full relative xs:p-2 sm:p-6 md:p-10;
+}
+
+.closeBtn {
+  @apply absolute text-black bg-white rounded-full flex items-center justify-center
+    cursor-pointer top-2 right-2 xs:top-4 xs:right-4
+    sm:top-8 sm:right-8
+    md:top-12 md:right-12
+    size-8 text-xl z-400;
+}

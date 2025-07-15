@@ -1,0 +1,87 @@
+{
+  "contactForm": {
+    "title": "Contact Form",
+    "description": "Fill up this form and our team will get back to you within 3 working days.",
+    "requiredNote": "* indicates required field",
+    "fields": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email Address",
+      "subject": "Subject",
+      "messageBody": "Message (max 100 characters)"
+    },
+    "buttons": {
+      "submit": "Send Message",
+      "cancel": "Cancel"
+    },
+    "success": {
+      "header": "Thank You!",
+      "body": "Thanks for reaching out! We'll get back to you within 3 working days."
+    },
+    "validation": {
+      "name": {
+        "required": "Please enter your name.",
+        "max": "Name cannot exceed 60 characters.",
+        "regex": "Invalid name! Please enter a valid name. (a-z, A-Z only)"
+      },
+      "email": {
+        "format": "Invalid email! Please enter a valid Email address."
+      },
+      "subject": {
+        "required": "Please enter a subject.",
+        "max": "Subject cannot exceed 100 characters."
+      },
+      "messageBody": {
+        "required": "Please enter a message.",
+        "max": "Message cannot exceed 500 characters."
+      },
+      "contact": {
+        "or": "Please enter at least a phone number or email."
+      }
+    },
+    "header": {
+      "title": "CONTACT US",
+      "subtitle": "Call or Whatsapp us at ",
+      "phone": "8888 8888",
+      "date1": "Mon - Fri (9am - 6pm)",
+      "date2": "Saturday (9am - 12pm)",
+      "sectionTitle": "OR DROP US AN EMAIL"
+    }
+  },
+  "contactBanner": {
+    "photos": {
+      "morning": { "src": "contactUsBanner.png", "alt": "Morning banner" },
+      "night": { "src": "darkContactUsBanner.png", "alt": "Night banner" }
+    }
+  },
+  "contactInquiry": {
+    "header": "Talk to Us!",
+    "body": "Have a burning question? We would love to hear from you!",
+    "buttonText": "Contact us"
+  },
+  "contactVisitUs": {
+    "header": "Visit Us*!",
+    "warning": "⚠️ Note*: This address is for display only."
+  },
+  "contactMeetUs": {
+    "header": "Meet Us",
+    "contactInfos": {
+      "contactInfo": {
+        "title": "Contact Info",
+        "items": ["📞 Phone: 87414896", "📧 Email: test@test.com"]
+      },
+      "operatingHours": {
+        "title": "Operating Hours",
+        "items": ["Mon-Fri (9am-6pm)", "Saturday (9am-12pm)"]
+      },
+      "address": {
+        "title": "Address",
+        "items": [
+          "99 Marshmallow Street",
+          "#00-00 Spaghetti Tower",
+          "Singapore ---101 🔥"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.form {
+  @apply flex flex-col min-w-50 xs:w-84 sm:!w-md [@media(min-width:450px)]:w-sm;
+}
+
+.formContent {
+  @apply flex flex-col items-center w-full p-8;
+}
+
+.inputContainer {
+  @apply flex flex-col gap-2 w-full;
+}
+
+.formButton {
+  @apply flex items-center justify-end w-full;
+}
+
+.contactTextField {
+  @apply !text-sm mb-2.5 xs:!text-base last:mb-1;
+}
+
+.contactTextLabelField {
+  @apply !text-sm xs:!text-base !text-wrap;
+}
+
+.alertBox {
+  @apply my-0 mt-4;
+}
+
+.btn {
+  @apply rounded-md text-white font-semibold w-full xs:mx-8 px-2 xs:text-xl xs:px-4 py-2
+    transition-colors duration-200 bg-primary hover:bg-primary-700 active:bg-primary-800;
+}
+
+.requiredNoteContainer {
+  @apply flex pb-6 w-full justify-end;
+}
+
+.requiredNote {
+  @apply text-xs xs:text-sm text-neutral-400;
+}

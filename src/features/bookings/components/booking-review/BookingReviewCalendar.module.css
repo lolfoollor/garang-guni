@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@reference "@/index.css";
+
+.reviewCalendar {
+  @apply flex items-center gap-2 font-bold text-sm md:text-xl xs:text-base;
+}
