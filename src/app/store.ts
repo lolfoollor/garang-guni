@@ -3,10 +3,11 @@ import storage from "redux-persist/lib/storage";
 import bookingDraftReducer, {
   setDraft,
 } from "@/features/bookings/bookingDraftSlice";
+import authReducer from "@/features/auth/authSlice";
 import { persistReducer, persistStore } from "redux-persist";
 import { loadImageBlob } from "./db";
 import { Image } from "@/components/Image";
-import { apiSlice } from "@/features/api/apiSlice";
+import { apiSlice } from "@/app/api/apiSlice";
 
 const persistConfig = {
   key: "root",
@@ -15,6 +16,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
+  auth: authReducer,
   bookingDraft: bookingDraftReducer,
   [apiSlice.reducerPath]: apiSlice.reducer,
 });
@@ -55,4 +57,4 @@ persistor.subscribe(async () => {
 
 export type AppStore = typeof store;
 export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof rootReducer>;
