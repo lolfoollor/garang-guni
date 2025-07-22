@@ -62,7 +62,7 @@
 
 @layer base {
   #root {
-    @apply min-h-screen w-screen overflow-x-hidden;
+    @apply h-screen w-screen overflow-x-hidden;
   }
 
   body {
@@ -75,5 +75,5 @@
 }
 
 .app {
-  @apply min-w-full h-full;
+  @apply flex min-w-full h-full;
 }

@@ -1,5 +1,6 @@
 export const ROUTES = {
   HOME: "/",
+  ADMIN: "/admin",
   AUTH: "/auth",
   BOOK: "/book",
   CONTACT: "/contact",
@@ -16,6 +17,7 @@ export const ROUTES = {
   PROFILE: "/profile",
   SCHEDULE: "/schedule",
   SETTING: "/setting",
+  UNAUTHORIZED: "/unauth",
   TERMS_AND_PRIVACY: "/terms-and-privacy",
   TOS: "/tos",
 };

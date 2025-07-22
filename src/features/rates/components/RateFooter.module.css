@@ -2,7 +2,7 @@
 @reference "@/index.css";
 
 .footerContainer {
-  @apply flex flex-col p-3 xs:p-4 sm:px-10 pb-4 xs:pb-4 sm:py-4;
+  @apply flex flex-col mt-auto p-3 xs:p-4 sm:px-10 pb-4 xs:pb-4 sm:py-4;
 }
 
 .footer {
