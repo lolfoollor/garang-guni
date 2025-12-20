@@ -1,4 +1,4 @@
-import { RATE_API_URL } from "@/app/api/apiRoutes";
+import { API_ROUTES } from "@/app/api/apiRoutes";
 import { apiSlice, TagTypes } from "@/app/api/apiSlice";
 
 export type Rate = {
@@ -25,23 +25,23 @@ export type NewRate = Pick<
 export const rateApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getRates: builder.query<Rate[], void>({
-      query: () => RATE_API_URL,
+      query: () => API_ROUTES.RATES.GET_ALL,
       providesTags: (result = []) => [
         TagTypes.RateTag,
         ...result.map(
-          ({ rateId }) => ({ type: TagTypes.RateTag, rateId } as const),
+          ({ rateId }) => ({ type: TagTypes.RateTag, id: rateId } as const),
         ),
       ],
     }),
     getRate: builder.query<Rate, string>({
-      query: (rateId) => `${RATE_API_URL}/${rateId}`,
+      query: (rateId) => API_ROUTES.RATES.BY_ID(rateId),
       providesTags: (_result, _error, arg) => [
         { type: TagTypes.RateTag, id: arg },
       ],
     }),
     addNewRate: builder.mutation<Rate, NewRate>({
       query: (initialRate) => ({
-        url: RATE_API_URL,
+        url: API_ROUTES.RATES.POST,
         method: "POST",
         body: initialRate,
       }),
@@ -49,7 +49,7 @@ export const rateApiSlice = apiSlice.injectEndpoints({
     }),
     editRate: builder.mutation<Rate, RateUpdate>({
       query: (updatedRate) => ({
-        url: `${RATE_API_URL}/${updatedRate.rateId}`,
+        url: API_ROUTES.RATES.BY_ID(updatedRate.rateId),
         method: "PATCH",
         body: updatedRate,
       }),
@@ -59,7 +59,7 @@ export const rateApiSlice = apiSlice.injectEndpoints({
     }),
     deleteRate: builder.mutation<void, string>({
       query: (rateId) => ({
-        url: `${RATE_API_URL}/${rateId}`,
+        url: API_ROUTES.RATES.BY_ID(rateId),
         method: "DELETE",
       }),
       invalidatesTags: (_result, _error, arg) => [
@@ -69,4 +69,10 @@ export const rateApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetRatesQuery } = rateApiSlice;
+export const { 
+  useGetRatesQuery, 
+  useGetRateQuery,       
+  useAddNewRateMutation, 
+  useEditRateMutation,   
+  useDeleteRateMutation,
+} = rateApiSlice;

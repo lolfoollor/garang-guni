@@ -1,10 +1,24 @@
 // export const BASE_API_URL = "https://6698c57b2069c438cd6feb5e.mockapi.io";
-export const BASE_API_URL = "https://localhost:5000/";
-const AUTH_API_URL = "/auth";
-export const LOGIN_API_URL = `${AUTH_API_URL}/login`;
-export const REGISTER_API_URL = `${AUTH_API_URL}/register`;
-export const LOGOUT_API_URL = `${AUTH_API_URL}/logout`;
-export const REFRESH_API_URL = `${AUTH_API_URL}/refresh`;
-export const RESET_PASSWORD_API_URL = `${AUTH_API_URL}/reset-password`;
-export const ME_API_URL = "/users/me";
-export const RATE_API_URL = "/items";
+const BASE_URL = "http://localhost:5000/api"
+const AUTH_PREFIX = "/auth";
+const RATE_PREFIX = '/items';
+const USER_PREFIX = '/users'
+
+export const API_ROUTES = {
+  BASE_URL: `${BASE_URL}`,
+  AUTH: {
+    LOGIN: `${AUTH_PREFIX}/login`,
+    REGISTER: `${AUTH_PREFIX}/register`,
+    REFRESH: `${AUTH_PREFIX}/refresh`,
+    LOGOUT: `${AUTH_PREFIX}/logout`,
+    RESET_PASSWORD: `${AUTH_PREFIX}/reset-password`,
+  },
+  USER: {
+    ME: `${USER_PREFIX}/me`,
+  },
+  RATES: {
+    POST: `${RATE_PREFIX}`,
+    GET_ALL: `${RATE_PREFIX}`,
+    BY_ID: (id: string | number) => `${RATE_PREFIX}/${id}`,
+  },
+} as const;

@@ -4,13 +4,16 @@ import {
   FetchArgs,
   fetchBaseQuery,
 } from "@reduxjs/toolkit/query/react";
-import { BASE_API_URL, REFRESH_API_URL } from "./apiRoutes";
+import { API_ROUTES } from "./apiRoutes";
+import { Mutex } from "async-mutex";
 import { HttpStatusCode } from "axios";
 import { logout, setCredentials } from "@/features/auth/authSlice";
 import { RootState } from "../store";
 
+const mutex = new Mutex();
+
 const baseQuery = fetchBaseQuery({
-  baseUrl: BASE_API_URL,
+  baseUrl: API_ROUTES.BASE_URL,
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     const state = getState() as RootState;
@@ -27,26 +30,36 @@ const baseQueryWithReauth = async (
   api: BaseQueryApi,
   extraOptions: {},
 ) => {
+  await mutex.waitForUnlock();
   let result = await baseQuery(args, api, extraOptions);
   const state = api.getState() as RootState;
-  const resultErrorStatusCode =
-    result?.error &&
-    typeof result.error.status === "number" &&
-    result.error.status;
+  const token = state.auth.token;
 
-  if (
-    !state.auth.token ||
-    resultErrorStatusCode !== HttpStatusCode.Unauthorized
-  ) {
+  if (result.error?.status !== HttpStatusCode.Unauthorized || !token) {
     return result;
   }
 
-  const refreshResult = await baseQuery(REFRESH_API_URL, api, extraOptions);
-  if (refreshResult?.data) {
-    api.dispatch(setCredentials({ ...refreshResult.data }));
-    result = await baseQuery(args, api, extraOptions);
-  } else {
-    api.dispatch(logout());
+  if (mutex.isLocked()) {
+    await mutex.waitForUnlock();
+    return baseQuery(args, api, extraOptions);
+  }
+
+  const release = await mutex.acquire();
+
+  try {
+    const refreshResult = await baseQuery(
+      { url: API_ROUTES.AUTH.REFRESH, method: 'POST' },
+      api,
+      extraOptions);
+    
+      if (refreshResult?.data) {
+        api.dispatch(setCredentials(refreshResult.data as { accessToken: string }));
+        result = await baseQuery(args, api, extraOptions);
+      } else {
+        api.dispatch(logout());
+      }
+  } finally {
+    release();
   }
 
   return result;
